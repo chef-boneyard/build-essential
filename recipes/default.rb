@@ -17,29 +17,43 @@
 # limitations under the License.
 #
 
-case node['platform']
-when "ubuntu","debian"
-  %w{build-essential binutils-doc}.each do |pkg|
+require 'chef/shell_out'
+
+case node['os']
+when "linux"
+  packages = value_for_platform(
+    ["ubuntu", "debian"] => {
+      "default" => ["build-essential", "binutils-doc"]
+    },
+    ["centos", "redhat", "fedora", "amazon"] => {
+      "default" => ["gcc", "gcc-c++", "kernel-devel", "make"]
+    }
+  )
+
+  packages.each do |pkg|
     package pkg do
       action :install
     end
   end
-when "centos","redhat","fedora","amazon"
-  %w{gcc gcc-c++ kernel-devel make}.each do |pkg|
+
+  %w{autoconf flex bison}.each do |pkg|
     package pkg do
       action :install
     end
   end
-end
+when "darwin"
+  result = Chef::ShellOut.new("pkgutil --pkgs").run_command
+  installed = result.stdout.split("\n").include?("com.apple.pkg.gcc4.2Leo")
+  pkg_filename = File.basename(node['build_essential']['osx']['gcc_installer_url'])
+  pkg_path = "#{Chef::Config[:file_cache_path]}/#{pkg_filename}"
 
-package "autoconf" do
-  action :install
-end
+  remote_file pkg_path do
+    source node['build_essential']['osx']['gcc_installer_url']
+    checksum node['build_essential']['osx']['gcc_installer_checksum']
+    not_if { installed }
+  end
 
-package "flex" do
-  action :install
-end
-
-package "bison" do
-  action :install
+  execute "sudo installer -pkg \"#{pkg_path}\" -target /" do
+    not_if { installed }
+  end
 end
