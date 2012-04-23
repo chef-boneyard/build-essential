@@ -32,14 +32,8 @@ when "centos","redhat","fedora","amazon"
   end
 end
 
-package "autoconf" do
-  action :install
-end
-
-package "flex" do
-  action :install
-end
-
-package "bison" do
-  action :install
+%w{autoconf flex bison}.each do |pkg|
+  package pkg do
+    action :install
+  end
 end
