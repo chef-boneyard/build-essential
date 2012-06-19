@@ -25,7 +25,7 @@ when "linux"
     ["ubuntu", "debian"] => {
       "default" => ["build-essential", "binutils-doc"]
     },
-    ["centos", "redhat", "fedora", "amazon"] => {
+    ["centos", "redhat", "scientific", "fedora", "amazon"] => {
       "default" => ["gcc", "gcc-c++", "kernel-devel", "make"]
     }
   )
