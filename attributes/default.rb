@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+default['build_essential']['compiletime'] = false
+
 case platform
 when "mac_os_x"
   case
