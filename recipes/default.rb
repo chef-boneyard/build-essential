@@ -19,27 +19,43 @@
 
 require 'chef/shell_out'
 
+compiletime = node['build_essential']['compiletime']
+
 case node['os']
 when "linux"
-  packages = value_for_platform(
-    ["ubuntu", "debian"] => {
-      "default" => ["build-essential", "binutils-doc"]
-    },
-    ["centos", "redhat", "fedora", "amazon"] => {
-      "default" => ["gcc", "gcc-c++", "kernel-devel", "make"]
-    }
-  )
+
+  # on apt-based platforms when first provisioning we need to force
+  # apt-get update at compiletime if we are going to try to install at compiletime
+  if node['platform_family'] == "debian"
+    execute "apt-get update" do
+      action :nothing
+      # tip: to suppress this running every time, just use the apt cookbook
+      not_if do
+        ::File.exists?('/var/lib/apt/periodic/update-success-stamp') &&
+        ::File.mtime('/var/lib/apt/periodic/update-success-stamp') > Time.now - 86400*2
+      end
+    end.run_action(:run) if compiletime
+  end
+
+  packages = case node['platform_family']
+    when "debian"
+      %w{build-essential binutils-doc}
+    when "redhat", "fedora"
+      %w{gcc gcc-c++ kernel-evel make}
+    end
 
   packages.each do |pkg|
-    package pkg do
-      action :install
+    r = package pkg do
+      action ( compiletime ? :nothing : :install )
     end
+    r.run_action(:install) if compiletime
   end
 
   %w{autoconf flex bison}.each do |pkg|
-    package pkg do
-      action :install
+    r = package pkg do
+      action ( compiletime ? :nothing : :install )
     end
+    r.run_action(:install) if compiletime
   end
 when "darwin"
   result = Chef::ShellOut.new("pkgutil --pkgs").run_command
@@ -47,13 +63,17 @@ when "darwin"
   pkg_filename = File.basename(node['build_essential']['osx']['gcc_installer_url'])
   pkg_path = "#{Chef::Config[:file_cache_path]}/#{pkg_filename}"
 
-  remote_file pkg_path do
+  r = remote_file pkg_path do
     source node['build_essential']['osx']['gcc_installer_url']
     checksum node['build_essential']['osx']['gcc_installer_checksum']
+    action ( compiletime ? :nothing : :create )
     not_if { installed }
   end
+  r.run_action(:create) if compiletime
 
-  execute "sudo installer -pkg \"#{pkg_path}\" -target /" do
+  r = execute "sudo installer -pkg \"#{pkg_path}\" -target /" do
+    action ( compiletime ? :nothing : :run )
     not_if { installed }
   end
+  r.run_action(:run) if compiletime
 end
