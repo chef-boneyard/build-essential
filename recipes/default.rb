@@ -40,8 +40,8 @@ when "linux"
   packages = case node['platform_family']
     when "debian"
       %w{build-essential binutils-doc}
-    when "redhat", "fedora"
-      %w{gcc gcc-c++ kernel-evel make}
+    when "rhel", "fedora"
+      %w{gcc gcc-c++ kernel-devel make}
     end
 
   packages.each do |pkg|
