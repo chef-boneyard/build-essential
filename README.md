@@ -82,7 +82,7 @@ Example role:
       "recipe[myapp]"
     )
     default_attributes(
-      "build-essential" => {
+      "build_essential" => {
         "compiletime" => true
       }
     )
