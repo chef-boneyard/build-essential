@@ -1,3 +1,7 @@
+## v1.1.2:
+
+* [COOK-1620] - support OS X 10.8
+
 ## v1.1.0:
 
 * [COOK-1098] - support amazon linux
