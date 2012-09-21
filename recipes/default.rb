@@ -44,18 +44,22 @@ when "linux"
       %w{gcc gcc-c++ kernel-devel make}
     end
 
-  packages.each do |pkg|
-    r = package pkg do
-      action ( compiletime ? :nothing : :install )
+  if packages
+    packages.each do |pkg|
+      r = package pkg do
+        action ( compiletime ? :nothing : :install )
+      end
+      r.run_action(:install) if compiletime
     end
-    r.run_action(:install) if compiletime
   end
 
-  %w{autoconf flex bison}.each do |pkg|
-    r = package pkg do
-      action ( compiletime ? :nothing : :install )
+  if %w{autoconf flex bison}
+    %w{autoconf flex bison}.each do |pkg|
+      r = package pkg do
+        action ( compiletime ? :nothing : :install )
+      end
+      r.run_action(:install) if compiletime
     end
-    r.run_action(:install) if compiletime
   end
 when "darwin"
   result = Chef::ShellOut.new("pkgutil --pkgs").run_command
