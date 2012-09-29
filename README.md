@@ -33,7 +33,7 @@ This cookbook has one recipe, default.
 
 On Linux platforms (see __Platform__ above for a supported list of
 families), packages required to build C source projects are installed.
-This includes GCC, make, autconf and others. On Debian-family
+This includes GCC, make, autoconf and others. On Debian-family
 distributions, the apt-cache may need to be updated, especially during
 compile time installation. See __Usage__ for further information.
 
