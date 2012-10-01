@@ -5,7 +5,7 @@ description       "Installs C compiler / build tools"
 version           "1.1.2"
 recipe            "build-essential", "Installs packages required for compiling C software from source."
 
-%w{ fedora redhat centos ubuntu debian amazon }.each do |os|
+%w{ fedora redhat centos ubuntu debian amazon scientific}.each do |os|
   supports os
 end
 
