@@ -27,7 +27,8 @@ when "linux"
   # on apt-based platforms when first provisioning we need to force
   # apt-get update at compiletime if we are going to try to install at compiletime
   if node['platform_family'] == "debian"
-    execute "apt-get update" do
+    execute "apt-get-update-build-essentials" do
+      command "apt-get update"
       action :nothing
       # tip: to suppress this running every time, just use the apt cookbook
       not_if do
