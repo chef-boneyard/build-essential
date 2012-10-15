@@ -42,6 +42,8 @@ when "linux"
       %w{build-essential binutils-doc}
     when "rhel", "fedora"
       %w{gcc gcc-c++ kernel-devel make}
+    when "suse"
+      %w{gcc gcc-c++ kernel-default-devel make m4}  # in SLES there is no kernel-devel
     end
 
   packages.each do |pkg|
