@@ -1,3 +1,10 @@
+## v1.2.0:
+
+* Add test-kitchen support (source repo only)
+* [COOK-1677] - build-essential cookbook support for OpenSuse and SLES
+* [COOK-1718] - build-essential cookbook metadata should include scientific
+* [COOK-1768] - The apt-get update in build-essentials needs to be renamed
+
 ## v1.1.2:
 
 * [COOK-1620] - support OS X 10.8
