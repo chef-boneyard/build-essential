@@ -1,3 +1,6 @@
+## v1.2.1:
+ * [COOK-1895] - support smartos
+
 ## v1.2.0:
 
 * Add test-kitchen support (source repo only)
