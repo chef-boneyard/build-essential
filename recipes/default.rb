@@ -21,8 +21,8 @@ require 'chef/shell_out'
 
 compiletime = node['build_essential']['compiletime']
 
-case node['os']
-when "linux"
+case node['platform']
+when "centos", "redhat", "suse", "fedora", "scientific", "amazon", "ubuntu","debian"
 
   # on apt-based platforms when first provisioning we need to force
   # apt-get update at compiletime if we are going to try to install at compiletime
@@ -60,6 +60,15 @@ when "linux"
     end
     r.run_action(:install) if compiletime
   end
+
+when "smartos"
+    include_recipe 'pkgin'
+    %w{gcc47 gcc47-runtime scmgit-base gmake pkg-config binutils}.each do |package|
+			pkgin_package package do 
+      	action :install 
+    	end
+		end
+
 when "darwin"
   result = Chef::ShellOut.new("pkgutil --pkgs").run_command
   installed = result.stdout.split("\n").include?("com.apple.pkg.gcc4.2Leo")
