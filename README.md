@@ -14,6 +14,11 @@ Supported platforms by platform family:
 
 * Linux (fedora redhat centos ubuntu debian amazon scientific)
 * Darwin (`mac_os_x` 10.6+)
+* SmartOs
+
+## Cookbooks
+
+Requires `pkgin` cookbook on SmartOS
 
 Attributes
 ==========
