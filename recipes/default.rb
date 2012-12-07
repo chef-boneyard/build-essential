@@ -47,18 +47,22 @@ when "centos", "redhat", "suse", "fedora", "scientific", "amazon", "ubuntu","deb
       %w{gcc gcc-c++ kernel-default-devel make m4}  # in SLES there is no kernel-devel
     end
 
-  packages.each do |pkg|
-    r = package pkg do
-      action ( compiletime ? :nothing : :install )
+  if packages
+    packages.each do |pkg|
+      r = package pkg do
+        action ( compiletime ? :nothing : :install )
+      end
+      r.run_action(:install) if compiletime
     end
-    r.run_action(:install) if compiletime
   end
 
-  %w{autoconf flex bison}.each do |pkg|
-    r = package pkg do
-      action ( compiletime ? :nothing : :install )
+  if %w{autoconf flex bison}
+    %w{autoconf flex bison}.each do |pkg|
+      r = package pkg do
+        action ( compiletime ? :nothing : :install )
+      end
+      r.run_action(:install) if compiletime
     end
-    r.run_action(:install) if compiletime
   end
 
 when "smartos"
