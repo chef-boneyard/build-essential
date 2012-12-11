@@ -50,6 +50,8 @@ when "centos", "redhat", "suse", "fedora", "scientific", "amazon", "ubuntu","deb
   packages.each do |pkg|
     r = package pkg do
       action ( compiletime ? :nothing : :install )
+      retries 5
+      retry_delay 10
     end
     r.run_action(:install) if compiletime
   end
@@ -57,6 +59,8 @@ when "centos", "redhat", "suse", "fedora", "scientific", "amazon", "ubuntu","deb
   %w{autoconf flex bison}.each do |pkg|
     r = package pkg do
       action ( compiletime ? :nothing : :install )
+      retries 5
+      retry_delay 10
     end
     r.run_action(:install) if compiletime
   end
