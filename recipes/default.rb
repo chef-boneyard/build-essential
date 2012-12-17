@@ -71,7 +71,8 @@ when "smartos"
 
 when "darwin"
   result = Chef::ShellOut.new("pkgutil --pkgs").run_command
-  installed = result.stdout.split("\n").include?("com.apple.pkg.gcc4.2Leo")
+  osx_gcc_installer_installed = result.stdout.split("\n").include?("com.apple.pkg.gcc4.2Leo")
+  developer_tools_cli_installed = result.stdout.split("\n").include?("com.apple.pkg.DeveloperToolsCLI")
   pkg_filename = File.basename(node['build_essential']['osx']['gcc_installer_url'])
   pkg_path = "#{Chef::Config[:file_cache_path]}/#{pkg_filename}"
 
@@ -79,13 +80,13 @@ when "darwin"
     source node['build_essential']['osx']['gcc_installer_url']
     checksum node['build_essential']['osx']['gcc_installer_checksum']
     action ( compiletime ? :nothing : :create )
-    not_if { installed }
+    not_if { osx_gcc_installer_installed or developer_tools_cli_installed  }
   end
   r.run_action(:create) if compiletime
 
   r = execute "sudo installer -pkg \"#{pkg_path}\" -target /" do
     action ( compiletime ? :nothing : :run )
-    not_if { installed }
+    not_if { osx_gcc_installer_installed or developer_tools_cli_installed  }
   end
   r.run_action(:run) if compiletime
 end
