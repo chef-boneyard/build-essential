@@ -1,3 +1,8 @@
+## v1.3.2:
+
+* [COOK-2069] - build-essential will install osx-gcc-installer when
+  Xcode is present
+
 ## v1.3.0:
 
  * [COOK-1895] - support smartos
