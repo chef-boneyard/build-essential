@@ -64,10 +64,10 @@ when "rhel", "suse", "fedora", "debian"
 when "smartos"
     include_recipe 'pkgin'
     %w{gcc47 gcc47-runtime scmgit-base gmake pkg-config binutils}.each do |package|
-			pkgin_package package do 
-      	action :install 
-    	end
-		end
+      pkgin_package package do
+        action :install
+      end
+    end
 
 when "mac_os_x"
   result = Chef::ShellOut.new("pkgutil --pkgs").run_command
