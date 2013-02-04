@@ -1,3 +1,7 @@
+## v1.3.4:
+
+* [COOK-2272] - Complete `platform_family` conversion in build-essential
+
 ## v1.3.2:
 
 * [COOK-2069] - build-essential will install osx-gcc-installer when
