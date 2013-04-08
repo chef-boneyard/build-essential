@@ -19,12 +19,14 @@ Supported platforms by platform family:
 * mac_os_x (10.6+)
 * rhel (centos, redhat, amazon, scientific)
 * smartos
+* solaris2
 
 ## Cookbooks
 
 This cookbook suggests the following external cookbooks:
 
 * [pkgin](http://community.opscode.com/cookbooks/pkgin) (someara) - SmartOS only
+* [pkgutil](http://community.opscode.com/cookbooks/pkgutil) (marthag) - Solaris 2 only
 
 Attributes
 ==========
