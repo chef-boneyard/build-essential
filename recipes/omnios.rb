@@ -27,7 +27,7 @@
   system/library/math/header-math
 }.each do |pkg|
 
-  r = pkgutil_package pkg do
+  r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
   end
   r.run_action(:install) if node['build_essential']['compiletime']
