@@ -19,6 +19,8 @@
 
 begin
   include_recipe "build-essential::#{node['platform_family']}"
+rescue Chef::Exceptions::CookbookNotFound
+  Chef::Log.warn "Chef cannot find the build-essential cookbook while running build-essential::default"
 rescue Chef::Exceptions::RecipeNotFound
   Chef::Log.warn "A build-essential recipe does not exist for the platform_family: #{node['platform_family']}"
 end
