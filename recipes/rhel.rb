@@ -17,16 +17,16 @@
 # limitations under the License.
 #
 
-pkgs = %w{
+pkgs = %W[
   autoconf
   bison
   flex
   gcc
   gcc-c++
-  kernel-devel
+  kernel-devel-#{node.os_version}
   make
   m4
-}
+]
 
 # ensure GCC 4 is available on older pre-6 EL
 if node['platform_version'].to_i < 6
