@@ -17,16 +17,16 @@
 # limitations under the License.
 #
 
-pkgs = %W[
+pkgs = %w{
   autoconf
   bison
   flex
   gcc
   gcc-c++
-  kernel-devel-#{node.os_version}
+  kernel-devel
   make
   m4
-]
+}
 
 # ensure GCC 4 is available on older pre-6 EL
 if node['platform_version'].to_i < 6
@@ -37,6 +37,13 @@ pkgs.flatten.each do |pkg|
 
   r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
+    # TODO: Fix http://tickets.opscode.com/browse/CHEF-4439
+    # Chef::Platform os_version attr for RHEL include ARCH which needs to be stripped of for the yum installation to work
+    # version( node['os_version'] ) if pkg == 'kernel-devel'
+    if pkg == 'kernel-devel'
+      chef_platform_os_version = node['os_version'].match /\.el\d$/ ? node['os_version'] : node['os_version'].gsub(/\.[^\.]*$/, '')
+      version( chef_platform_os_version.to_s )
+    end
   end
   r.run_action(:install) if node['build_essential']['compiletime']
 
