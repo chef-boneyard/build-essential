@@ -2,6 +2,17 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v1.4.2
+------
+### Bug
+- **[COOK-3318](https://tickets.opscode.com/browse/COOK-3318)** - Use Mixlib::ShellOut instead of Chef::ShellOut
+
+### New Feature
+- **[COOK-3093](https://tickets.opscode.com/browse/COOK-3093)** - Add OmniOS support
+
+### Improvement
+- **[COOK-3024](https://tickets.opscode.com/browse/COOK-3024)** - Use newer package on SmartOS
+
 v1.4.0
 ------
 This version splits up the default recipe into recipes included based on the node's platform_family.
