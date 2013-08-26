@@ -37,6 +37,13 @@ pkgs.flatten.each do |pkg|
 
   r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
+    # TODO: Fix http://tickets.opscode.com/browse/CHEF-4437
+    # Chef::Platform os_version attr for RHEL include ARCH which needs to be stripped of for the yum installation to work
+    # version( node['os_version'] ) if pkg == 'kernel-devel'
+    if pkg == 'kernel-devel'
+      chef_platform_os_version = node['os_version'].match /\.el\d$/ ? node['os_version'] : node['os_version'].gsub(/\.[^\.]*$/, '')
+      version( chef_platform_os_version.to_s )
+    end
   end
   r.run_action(:install) if node['build_essential']['compiletime']
 
