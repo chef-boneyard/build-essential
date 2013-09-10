@@ -37,6 +37,8 @@ pkgs.flatten.each do |pkg|
 
   r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
+    retries 5       
+    retry_delay 10  
   end
   r.run_action(:install) if node['build_essential']['compiletime']
 
