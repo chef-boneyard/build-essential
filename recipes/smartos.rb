@@ -17,6 +17,21 @@
 # limitations under the License.
 #
 
+# for backwards compatibility with older datasets
+if shell_out("pkgin se build-essential").run_command.stdout =~ /No result/
+  packages = %w(
+    gcc47
+    gcc47-runtime
+    scmgit-base
+    gmake
+    pkg-config
+    binutils
+    m4
+    patch)
+else
+  packages = %w(build-essential)
+end
+
 %w{
   build-essential
 }.each do |pkg|
