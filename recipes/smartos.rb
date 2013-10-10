@@ -17,9 +17,22 @@
 # limitations under the License.
 #
 
-%w{
-  build-essential
-}.each do |pkg|
+# for backwards compatibility with older datasets
+if !system("pkgin avail | grep build-essential")
+  packages = %w(
+    gcc47
+    gcc47-runtime
+    scmgit-base
+    gmake
+    pkg-config
+    binutils
+    m4
+    patch)
+else
+  packages = %w(build-essential)
+end
+
+packages.each do |pkg|
 
   r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
