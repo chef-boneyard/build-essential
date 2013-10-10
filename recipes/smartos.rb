@@ -18,7 +18,7 @@
 #
 
 # for backwards compatibility with older datasets
-if shell_out("pkgin se build-essential").run_command.stdout =~ /No result/
+if !system("pkgin avail | grep build-essential")
   packages = %w(
     gcc47
     gcc47-runtime
@@ -32,9 +32,7 @@ else
   packages = %w(build-essential)
 end
 
-%w{
-  build-essential
-}.each do |pkg|
+packages.each do |pkg|
 
   r = package pkg do
     action( node['build_essential']['compiletime'] ? :nothing : :install )
