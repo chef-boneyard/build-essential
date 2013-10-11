@@ -18,7 +18,7 @@
 #
 
 # for backwards compatibility with older datasets
-if !system("pkgin avail | grep build-essential")
+if !system("pkgin -y avail | grep build-essential")
   packages = %w(
     gcc47
     gcc47-runtime
