@@ -21,6 +21,7 @@
 # apt-get update at compiletime if we are going to try to install at compiletime
 execute "apt-get-update-build-essentials" do
   command "apt-get update"
+  ignore_failure true
   action :nothing
   # tip: to suppress this running every time, just use the apt cookbook
   not_if do
