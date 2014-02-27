@@ -2,6 +2,11 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v1.4.4 (2014-02-27)
+-------------------
+- [COOK-4245] Wrong package name used for developer tools on OS X 10.9
+
+
 v1.4.2
 ------
 ### Bug
