@@ -29,7 +29,7 @@
 }.each do |pkg|
 
   r = package pkg do
-    action( node['build_essential']['compiletime'] ? :nothing : :install )
+    action(node['build_essential']['compiletime'] ? :nothing : :install)
   end
   r.run_action(:install) if node['build_essential']['compiletime']
 
