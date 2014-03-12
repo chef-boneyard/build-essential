@@ -5,6 +5,7 @@ platforms:
   - name: centos-5.10
   - name: centos-6.5
   - name: fedora-19
+  - name: macosx-10.9
   - name: debian-7.4
     run_list: recipe[apt::default]
   - name: ubuntu-10.04
