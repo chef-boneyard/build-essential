@@ -17,4 +17,6 @@
 # limitations under the License.
 #
 
-xcode_command_line_tools 'install'
+potentially_at_compile_time do
+  xcode_command_line_tools 'install'
+end
