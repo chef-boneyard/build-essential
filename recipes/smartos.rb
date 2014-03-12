@@ -17,13 +17,6 @@
 # limitations under the License.
 #
 
-%w{
-  build-essential
-}.each do |pkg|
-
-  r = package pkg do
-    action(node['build_essential']['compiletime'] ? :nothing : :install)
-  end
-  r.run_action(:install) if node['build_essential']['compiletime']
-
+potentially_at_compile_time do
+  package 'build-essential'
 end

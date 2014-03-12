@@ -17,26 +17,19 @@
 # limitations under the License.
 #
 
-%w{
-  autoconf
-  automake
-  bison
-  coreutils
-  flex
-  gcc4core
-  gcc4g++
-  gcc4objc
-  gcc3core
-  gcc3g++
-  ggrep
-  gmake
-  gtar
-  pkgconfig
-}.each do |pkg|
-
-  r = pkgutil_package pkg do
-    action(node['build_essential']['compiletime'] ? :nothing : :install)
-  end
-  r.run_action(:install) if node['build_essential']['compiletime']
-
+potentially_at_compile_time do
+  package 'autoconf'
+  package 'automake'
+  package 'bison'
+  package 'coreutils'
+  package 'flex'
+  package 'gcc4core'
+  package 'gcc4g++'
+  package 'gcc4objc'
+  package 'gcc3core'
+  package 'gcc3g++'
+  package 'ggrep'
+  package 'gmake'
+  package 'gtar'
+  package 'pkgconfig'
 end
