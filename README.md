@@ -47,7 +47,7 @@ should do the following.
 
     ```ruby
     # Wrapper attribute
-    default['build-essential']['compile-time'] = true
+    default['build-essential']['compile_time'] = true
     ```
 
     ```ruby
