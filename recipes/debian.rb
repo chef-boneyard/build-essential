@@ -23,5 +23,6 @@ potentially_at_compile_time do
   package 'bison'
   package 'build-essential'
   package 'flex'
+  package 'gettext'
   package 'ncurses-dev'
 end
