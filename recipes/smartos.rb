@@ -18,5 +18,10 @@
 #
 
 potentially_at_compile_time do
+  package 'autoconf'
+  package 'binutils'
   package 'build-essential'
+  package 'gcc47'
+  package 'gmake'
+  package 'pkg-config'
 end
