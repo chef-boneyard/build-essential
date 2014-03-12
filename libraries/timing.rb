@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: build-essential
-# Recipe:: timing
+# Library:: timing
 #
 # Copyright 2014, Chef Software, Inc.
 #
