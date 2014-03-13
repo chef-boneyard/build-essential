@@ -70,7 +70,7 @@ cookbook name and community standards. I have gracefully converted the attribute
 for you, but this warning and conversion will be removed in the next major
 release of the build-essential cookbook.
 EOH
-        node.set['build-essential'] = node['build_essential']
+        node.default['build-essential'] = node['build_essential']
       end
 
       unless node['build-essential']['compiletime'].nil?
@@ -80,7 +80,7 @@ node['build-essential']['compile_time'] instead. I have gracefully converted the
 attribute for you, but this warning and converstion will be removed in the next
 major release of the build-essential cookbook.
 EOH
-        node.set['build-essential']['compile_time'] = node['build-essential']['compiletime']
+        node.default['build-essential']['compile_time'] = node['build-essential']['compiletime']
       end
     end
 
