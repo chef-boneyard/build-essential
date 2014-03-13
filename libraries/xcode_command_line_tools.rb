@@ -85,7 +85,7 @@ class Chef
       cmd.run_command
       cmd.error!
       true
-    rescue Mixlib::ShellOut::CommandFailed
+    rescue Mixlib::ShellOut::ShellCommandFailed
       false
     end
 
@@ -202,7 +202,7 @@ class Chef
       cmd.run_command
       cmd.error!
       true
-    rescue Mixlib::ShellOut::CommandFailed
+    rescue Mixlib::ShellOut::ShellCommandFailed
       false
     end
   end
