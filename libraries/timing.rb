@@ -21,6 +21,13 @@
 # This module is used to clean up the recipe DSL and "potentially" execute
 # resources at compile time (depending on the value of an attribute).
 #
+# This library is only for use within the build-essential cookbook. Resources
+# inside the potentially_at_compile_time block will not fire notifications in
+# some situations. This is fixable, but since none of the resources in this
+# cookbook actually use notifications, it is not worth the added technical debt.
+#
+# TL;DR Don't use this DSL method outside of this cookbook.
+#
 module BuildEssential
   module Timing
     #
@@ -70,7 +77,7 @@ cookbook name and community standards. I have gracefully converted the attribute
 for you, but this warning and conversion will be removed in the next major
 release of the build-essential cookbook.
 EOH
-        node.set['build-essential'] = node['build_essential']
+        node.default['build-essential'] = node['build_essential']
       end
 
       unless node['build-essential']['compiletime'].nil?
@@ -80,7 +87,7 @@ node['build-essential']['compile_time'] instead. I have gracefully converted the
 attribute for you, but this warning and converstion will be removed in the next
 major release of the build-essential cookbook.
 EOH
-        node.set['build-essential']['compile_time'] = node['build-essential']['compiletime']
+        node.default['build-essential']['compile_time'] = node['build-essential']['compiletime']
       end
     end
 
