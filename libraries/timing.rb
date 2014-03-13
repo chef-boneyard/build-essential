@@ -21,6 +21,13 @@
 # This module is used to clean up the recipe DSL and "potentially" execute
 # resources at compile time (depending on the value of an attribute).
 #
+# This library is only for use within the build-essential cookbook. Resources
+# inside the potentially_at_compile_time block will not fire notifications in
+# some situations. This is fixable, but since none of the resources in this
+# cookbook actually use notifications, it is not worth the added technical debt.
+#
+# TL;DR Don't use this DSL method outside of this cookbook.
+#
 module BuildEssential
   module Timing
     #
