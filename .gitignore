@@ -10,6 +10,7 @@ Gemfile.lock
 .bundle
 .cache
 .kitchen
+.rspec
 bin
 .kitchen.local.yml
 .coverage
