@@ -18,5 +18,5 @@ gmake_bin = if RUBY_PLATFORM =~ /freebsd/
 # Ensure GNU Make exists
 describe command("#{gmake_bin} --version") do
   it { should return_exit_status 0 }
-  it { should return_stdout /GNU/ }
+  it { should return_stdout(/GNU/) }
 end
