@@ -12,7 +12,7 @@ extensions.
 
 Requirements
 ------------
-Chef 0.10.10+ and Ohai 0.6.12+ are required. For the latest list of supported
+Chef 11+ and Ohai 6.14+ are required. For the latest list of supported
 platforms, please see the `metadata.rb`.
 
 **Note for OmniOS**: Currently, OmniOS's Ruby package is built with
