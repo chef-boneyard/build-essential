@@ -17,6 +17,7 @@ v2.0.0 (2014-03-13)
 - OSX no longer downloads OSX GCC and uses XCode CLI tools instead
 - `build_essential` -> `build-essential` in node attributes
 - `compiletime` -> `compile_time` in node attributes
+- Cookbook version 2.x no longer supports Chef 10.x
 
 v1.4.4 (2014-02-27)
 -------------------
