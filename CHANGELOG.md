@@ -2,6 +2,11 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.0.4 (2014-06-06)
+-------------------
+* [COOK-4661] added patch package to _rhel recipe
+
+
 v2.0.2 (2014-05-02)
 -------------------
 - Updated documentation about older Chef versions
