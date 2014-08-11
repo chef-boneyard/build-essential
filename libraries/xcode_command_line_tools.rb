@@ -131,9 +131,10 @@ class Chef
     # @return [void]
     #
     def download
-      remote_file dmg_cache_path do
-        source dmg_remote_source
-      end
+      remote_file = Resource::RemoteFile.new(dmg_cache_path, run_context)
+      remote_file.source(dmg_remote_source)
+      remote_file.backup(false)
+      remote_file.run_action(:create)
     end
 
     #
