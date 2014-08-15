@@ -2,6 +2,10 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.0.6 (2014-08-11)
+-------------------
+* Use the resource form of `remote_file` to prevent context issues
+
 v2.0.4 (2014-06-06)
 -------------------
 * [COOK-4661] added patch package to _rhel recipe
