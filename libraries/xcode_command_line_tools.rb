@@ -32,7 +32,7 @@ class Chef
       @provider = case node['platform_version'].to_f
                   when 10.7, 10.8
                     Provider::XcodeCommandLineToolsFromDmg
-                  when 10.9
+                  when 10.9, 10.10
                     Provider::XcodeCommandLineToolsFromSoftwareUpdate
                   else
                     Chef::Log.warn <<-EOH
@@ -174,17 +174,16 @@ class Chef
       else
         converge_by("Install #{new_resource}") do
           # This script was graciously borrowed and modified from Tim Sutton's
-          # osx-vm-templates at https://github.com/timsutton/osx-vm-templates/blob/b8c4d244/scripts/xcode-cli-tools.sh.
+          # osx-vm-templates at https://github.com/timsutton/osx-vm-templates/blob/b001475df54a9808d3d56d06e71b8fa3001fff42/scripts/xcode-cli-tools.sh
           execute 'install XCode Command Line tools' do
             command <<-EOH.gsub(/^ {14}/, '')
-              # This file is checked by CLI updates
+              # create the placeholder file that's checked by CLI updates' .dist code
+              # in Apple's SUS catalog
               touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
-
-              # Find the update named "Developer"
-              PROD=$(softwareupdate -l | grep -B 1 "Developer" | head -n 1 | awk -F"*" '{print $2}')
-
-              # Install it
-              softwareupdate -i $PROD -v
+              # find the CLI Tools update
+              PROD=$(softwareupdate -l | grep "Command Line" | head -n 1 | awk -F"*" '{print $2}' | sed -e 's/^ *//' | tr -d '\n')
+              # install it
+              softwareupdate -i "$PROD" -v
             EOH
           end
         end
