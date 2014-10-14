@@ -7,8 +7,8 @@ describe 'build-essential::_freebsd' do
   end
 
   it 'installs the correct packages' do
-    expect(chef_run).to install_package('gmake')
-    expect(chef_run).to install_package('autoconf')
-    expect(chef_run).to install_package('m4')
+    expect(chef_run).to install_package('devel/gmake')
+    expect(chef_run).to install_package('devel/autoconf')
+    expect(chef_run).to install_package('devel/m4')
   end
 end
