@@ -1,3 +1,9 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - script/**/*
+    - vendor/**/*
+
 AlignParameters:
   Enabled: false
 Documentation:
