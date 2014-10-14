@@ -26,5 +26,5 @@ gmake_bin = if os[:family] == 'freebsd'
 # Ensure GNU Make exists
 describe command("#{gmake_bin} --version") do
   its(:exit_status) { should eq 0 }
-  its(:stdout) { should match /GNU/ }
+  its(:stdout) { should match(/GNU/) }
 end
