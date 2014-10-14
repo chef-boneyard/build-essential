@@ -19,8 +19,8 @@ before_install:
 - echo -n $GCE_PUBKEY_CHUNK_{0..30} >> ~/.ssh/id_gce_pubkey.base64
 - cat ~/.ssh/id_gce_pubkey.base64 | tr -d ' ' | base64 --decode > ~/.ssh/id_gce.pub
 script:
-#- bundle exec rake style
-#- bundle exec rake spec
+- bundle exec rake style
+- bundle exec rake spec
 - bundle exec kitchen test $KITCHEN_INSTANCE
 after_script:
 - bundle exec kitchen destroy $KITCHEN_INSTANCE
