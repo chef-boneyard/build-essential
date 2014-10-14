@@ -3,9 +3,17 @@ require 'pathname'
 
 set :backend, :exec
 
-# Ensure GCC exists
-describe command('gcc --version') do
-  its(:exit_status) { should eq 0 }
+# FreeBSD 10+ uses clang
+compilers = if (os[:family] == 'freebsd') && (os[:release] == 10)
+              %w(cc c++)
+            else
+              %w(gcc g++ cc c++)
+            end
+
+compilers.each do |compiler|
+  describe command("#{compiler} --version") do
+    its(:exit_status) { should eq 0 }
+  end
 end
 
 # On FreeBSD `make` is actually BSD make
