@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::_suse' do
   let(:chef_run) do
-    ChefSpec::Runner.new(platform: 'suse', version: '11.03')
+    ChefSpec::Runner.new(platform: 'suse', version: '11.3')
       .converge(described_recipe)
   end
 
