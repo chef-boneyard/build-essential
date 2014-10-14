@@ -18,7 +18,7 @@
 #
 
 potentially_at_compile_time do
-  package 'gmake'
-  package 'autoconf'
-  package 'm4'
+  package 'devel/gmake'
+  package 'devel/autoconf'
+  package 'devel/m4'
 end

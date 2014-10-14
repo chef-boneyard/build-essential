@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 group :lint do
   gem 'foodcritic', '~> 3.0'
-  gem 'rubocop',    '~> 0.18'
+  gem 'rubocop',    '= 0.26.1'
 end
 
 group :unit do
-  gem 'berkshelf',  '~> 3.0.0.beta'
-  gem 'chefspec',   '~> 3.3'
+  gem 'berkshelf',  '~> 3.1'
+  gem 'chefspec',   '~> 4.0'
 end
 
 group :kitchen_common do
@@ -15,14 +15,14 @@ group :kitchen_common do
 end
 
 group :kitchen_vagrant do
-  gem 'kitchen-vagrant', '~> 0.14'
+  gem 'kitchen-vagrant', '~> 0.15'
 end
 
 group :kitchen_cloud do
-  gem 'kitchen-digitalocean'
-  gem 'kitchen-ec2'
-  gem 'kitchen-joyent'
-  gem 'kitchen-gce', :git => 'git://github.com/someara/kitchen-gce.git', :branch => 'authorized_ssh_keys'
+  gem 'kitchen-digitalocean', '~> 0.8'
+  gem 'kitchen-ec2',          '~> 0.8'
+  gem 'kitchen-joyent',       '~> 0.1'
+  gem 'kitchen-gce',          '~> 0.2'
 end
 
 group :development do
