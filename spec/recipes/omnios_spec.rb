@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::_omnios' do
   let(:chef_run) do
-    ChefSpec::Runner.new(platform: 'omnios', version: '151002')
+    ChefSpec::ServerRunner.new(platform: 'omnios', version: '151002')
       .converge(described_recipe)
   end
 

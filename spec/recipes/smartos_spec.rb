@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::_smartos' do
   let(:chef_run) do
-    ChefSpec::Runner.new(platform: 'smartos', version: 'joyent_20130111T180733Z')
+    ChefSpec::ServerRunner.new(platform: 'smartos', version: 'joyent_20130111T180733Z')
       .converge(described_recipe)
   end
 

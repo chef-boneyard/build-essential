@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::_fedora' do
   let(:chef_run) do
-    ChefSpec::Runner.new(platform: 'fedora', version: '19')
+    ChefSpec::ServerRunner.new(platform: 'fedora', version: '19')
       .converge(described_recipe)
   end
 

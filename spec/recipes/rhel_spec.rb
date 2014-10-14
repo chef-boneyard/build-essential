@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::_rhel' do
   let(:chef_run) do
-    ChefSpec::Runner.new(platform: 'redhat', version: '6.5')
+    ChefSpec::ServerRunner.new(platform: 'redhat', version: '6.5')
       .converge(described_recipe)
   end
 
