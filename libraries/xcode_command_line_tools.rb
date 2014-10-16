@@ -176,6 +176,7 @@ class Chef
           # This script was graciously borrowed and modified from Tim Sutton's
           # osx-vm-templates at https://github.com/timsutton/osx-vm-templates/blob/b001475df54a9808d3d56d06e71b8fa3001fff42/scripts/xcode-cli-tools.sh
           execute 'install XCode Command Line tools' do
+            # rubocop:disable Metrics/LineLength
             command <<-EOH.gsub(/^ {14}/, '')
               # create the placeholder file that's checked by CLI updates' .dist code
               # in Apple's SUS catalog
@@ -185,6 +186,7 @@ class Chef
               # install it
               softwareupdate -i "$PROD" -v
             EOH
+            # rubocop:enable Metrics/LineLength
           end
         end
       end
