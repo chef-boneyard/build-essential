@@ -53,8 +53,13 @@ namespace :integration do
   end
 end
 
-desc 'Run all tests on Travis'
-task travis: ['style', 'spec', 'integration:cloud']
+namespace :travis do
+  desc 'Run tests on Travis'
+  task ci: %w(style spec)
+end
 
-# Default
+# The default rake task should just run it all
+task default: %w(travis:ci integration)
+
+# The default rake task should just run it all
 task default: ['style', 'spec', 'integration:vagrant']
