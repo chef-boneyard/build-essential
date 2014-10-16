@@ -2,6 +2,10 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.1.2 (2014-10-14)
+-------------------
+* Mac OS X 10.10 Yosemite support
+
 v2.1.0 (2014-10-14)
 -------------------
 * Use fully-qualified names when installing FreeBSD package
