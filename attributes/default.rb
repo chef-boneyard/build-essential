@@ -18,3 +18,7 @@
 #
 
 default['build-essential']['compile_time'] = false
+
+# 'provided' - assumes packages are mounted in /var/spool/pkg
+# 'opencsw' - installs pkgutil and installs packages from opencsw.org
+default['build-essential']['solaris_pkg_source'] = 'provided'
