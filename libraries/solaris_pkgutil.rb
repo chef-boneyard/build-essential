@@ -1,6 +1,5 @@
 module BuildEssential
   module SolarisPkgutil
-
     def install_pkgutil
       bash 'install pkgutil' do
         user 'root'
@@ -8,7 +7,7 @@ module BuildEssential
         pkgadd -d http://get.opencsw.org/now
         /opt/csw/bin/pkgutil -U
         EOH
-        not_if { ::File.exists? '/opt/csw/bin/pkgutil'}
+        not_if { ::File.exist? '/opt/csw/bin/pkgutil' }
       end
     end
 
@@ -21,9 +20,7 @@ module BuildEssential
         not_if "pkgutil -l | grep #{pkg_name}"
       end
     end
-
   end
-
 end
 
 # Include the SolarisPkgutil module into the main recipe DSL
