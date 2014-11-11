@@ -26,8 +26,6 @@ potentially_at_compile_time do
   package 'gcc4core'
   package 'gcc4g++'
   package 'gcc4objc'
-  package 'gcc3core'
-  package 'gcc3g++'
   package 'ggrep'
   package 'gmake'
   package 'gtar'
