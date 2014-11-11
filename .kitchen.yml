@@ -27,7 +27,7 @@ platforms:
   #
   # The solaris boxes are only available for virtualbox.
   - name: solaris-10.11
-    run_list:  pkgutil::install
+    run_list:  pkgutil::default
     driver:
       box: chef/solaris-10.11 # private
 

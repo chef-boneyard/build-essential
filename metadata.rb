@@ -17,7 +17,8 @@ supports 'oracle'
 supports 'redhat'
 supports 'scientific'
 supports 'smartos'
+supports 'solaris2'
 supports 'suse'
 supports 'ubuntu'
 
-suggests 'pkgutil' # Solaris 2
+depends 'pkgutil', '~> 0.0.3'
