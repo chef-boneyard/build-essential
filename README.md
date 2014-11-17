@@ -60,7 +60,7 @@ should do the following.
     # Role
     default_attributes(
       'build-essential' => {
-        'compile_time' = true
+        'compile_time' => true
       }
     )
     ```
