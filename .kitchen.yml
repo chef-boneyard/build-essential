@@ -18,6 +18,18 @@ platforms:
     run_list: apt::default
   - name: ubuntu-13.10
     run_list: apt::default
+  # The following boxes are shared via VagrantCloud. Until kitchen-vagrant
+  # is updated you'll need to add the box manually:
+  #
+  #   vagrant box add chef/solaris-10.11
+  #
+  # Please note this may require a `vagrant login` if the box is private.
+  #
+  # The solaris boxes are only available for virtualbox.
+  - name: solaris-10.11
+    run_list:  pkgutil::default
+    driver:
+      box: chef/solaris-10.11 # private
 
 suites:
   - name: default
