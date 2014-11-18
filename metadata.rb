@@ -1,9 +1,9 @@
 name              'build-essential'
-maintainer        'Opscode, Inc.'
-maintainer_email  'cookbooks@opscode.com'
+maintainer        'Chef Software, Inc.'
+maintainer_email  'cookbooks@getchef.com'
 license           'Apache 2.0'
 description       'Installs C compiler / build tools'
-version           '2.1.2'
+version           '2.1.3'
 recipe            'build-essential', 'Installs packages required for compiling C software from source.'
 
 supports 'amazon'

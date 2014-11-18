@@ -2,6 +2,13 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.1.3 (2014-11-18)
+-------------------
+* Update metadata for supported versions of OS X (10.7+) as noted from
+  v2.0.0 previously (#38)
+* Clarify requirement to have apt package cache updated in README. (#41)
+* Fix Xcode CLI installation on OS X (#50)
+
 v2.1.2 (2014-10-14)
 -------------------
 * Mac OS X 10.10 Yosemite support
