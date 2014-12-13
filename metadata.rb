@@ -21,3 +21,9 @@ supports 'suse'
 supports 'ubuntu'
 
 suggests 'pkgutil' # Solaris 2
+
+attribute 'build-essential/compile_time',
+  :display_name => 'Build Essential Compile Time Execution',
+  :description => 'Execute resources at compile time.',
+  :default => false,
+  :recipes => ['build-essential::default']
