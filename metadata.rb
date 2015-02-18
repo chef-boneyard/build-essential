@@ -1,6 +1,6 @@
 name              'build-essential'
 maintainer        'Chef Software, Inc.'
-maintainer_email  'cookbooks@getchef.com'
+maintainer_email  'cookbooks@chef.io'
 license           'Apache 2.0'
 description       'Installs C compiler / build tools'
 version           '2.1.3'

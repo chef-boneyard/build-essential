@@ -56,13 +56,13 @@ v1.4.4 (2014-02-27)
 v1.4.2
 ------
 ### Bug
-- **[COOK-3318](https://tickets.opscode.com/browse/COOK-3318)** - Use Mixlib::ShellOut instead of Chef::ShellOut
+- **[COOK-3318](https://tickets.chef.io/browse/COOK-3318)** - Use Mixlib::ShellOut instead of Chef::ShellOut
 
 ### New Feature
-- **[COOK-3093](https://tickets.opscode.com/browse/COOK-3093)** - Add OmniOS support
+- **[COOK-3093](https://tickets.chef.io/browse/COOK-3093)** - Add OmniOS support
 
 ### Improvement
-- **[COOK-3024](https://tickets.opscode.com/browse/COOK-3024)** - Use newer package on SmartOS
+- **[COOK-3024](https://tickets.chef.io/browse/COOK-3024)** - Use newer package on SmartOS
 
 v1.4.0
 ------
