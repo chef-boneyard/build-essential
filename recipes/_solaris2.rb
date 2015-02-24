@@ -33,6 +33,7 @@ when 5.11
     package 'gnu-make'
     package 'gnu-tar'
     package 'pkg-config'
+    package 'ucb'
   end
 else
   raise "Sorry, we don't support Solaris version #{node['platform_version']} at this juncture."
