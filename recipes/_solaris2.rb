@@ -23,17 +23,18 @@ when 5.10
   potentially_at_compile_time do
     # create a nocheck file for automated install
     file '/var/sadm/install/admin/auto-install' do
-      content '
-mail=
-instance=overwrite
-partial=nocheck
-runlevel=nocheck
-idepend=nocheck
-space=ask
-setuid=nocheck
-conflict=nocheck
-action=nocheck
-basedir=default'
+      content <<-EOH.gsub(/^ {8}/, '')
+        mail=
+        instance=overwrite
+        partial=nocheck
+        runlevel=nocheck
+        idepend=nocheck
+        space=ask
+        setuid=nocheck
+        conflict=nocheck
+        action=nocheck
+        basedir=default
+      EOH
       owner 'root'
       group 'root'
       mode '0444'
