@@ -2,6 +2,13 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.2.0 (2015-03-18)
+-------------------
+* [solaris] Differentiate between Solaris 10 and 11
+* [solaris] Add ucb compat package
+* [solaris] Solaris 10 build essential setup
+* Fix metadata to use a string instead of a bool (see #56, #57)
+
 v2.1.3 (2014-11-18)
 -------------------
 * Update metadata for supported versions of OS X (10.7+) as noted from
