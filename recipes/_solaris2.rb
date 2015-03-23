@@ -72,6 +72,7 @@ when 5.11
     package 'gcc-3'
     package 'gnu-grep'
     package 'gnu-make'
+    package 'gnu-patch'
     package 'gnu-tar'
     package 'pkg-config'
     package 'ucb'
