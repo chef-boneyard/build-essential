@@ -3,7 +3,7 @@ maintainer        'Chef Software, Inc.'
 maintainer_email  'cookbooks@chef.io'
 license           'Apache 2.0'
 description       'Installs C compiler / build tools'
-version           '2.2.0'
+version           '2.2.1'
 recipe            'build-essential', 'Installs packages required for compiling C software from source.'
 
 supports 'amazon'

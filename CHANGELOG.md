@@ -2,6 +2,10 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.2.1 (2015-03-23)
+-------------------
+* Install GNU Patch on Solaris 11
+
 v2.2.0 (2015-03-18)
 -------------------
 * [solaris] Differentiate between Solaris 10 and 11
