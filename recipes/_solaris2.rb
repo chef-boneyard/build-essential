@@ -42,11 +42,11 @@ when 5.10
 
     case node['kernel']['machine']
     when 'i86pc'
-      package_url = 'https://chef-releng.s3.amazonaws.com/omnibus/build-essential/build-essential-0.0.4-1.i86pc.solaris'
-      package_checksum = 'bbee54df52109e1715f7acf4c3779c7a73765b8a8c74f7705f183556d57e6e3a'
+      package_url = 'https://chef-releng.s3.amazonaws.com/omnibus/build-essential/build-essential-0.0.5-1.i86pc.solaris'
+      package_checksum = '9200be60240e644848edd4557c06af2171c0d7536c10f6cb7ae6bf64c56beeee'
     when 'sun4v', 'sun4u'
-      package_url = 'https://chef-releng.s3.amazonaws.com/omnibus/build-essential/build-essential-0.0.4-1.sun4v.solaris'
-      package_checksum = 'c80a8365541cb713cedf1776ae731168a3f788be6f4ee1c85f7ff9cbfa8c530d'
+      package_url = 'https://chef-releng.s3.amazonaws.com/omnibus/build-essential/build-essential-0.0.5-1.sun4v.solaris'
+      package_checksum = '4a76f7ecd3b4a55099e001c24dd4a53bf4a1fc320e1d16c072d63529b254a8bb'
     end
 
     package_name = File.basename(package_url)
