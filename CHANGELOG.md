@@ -2,6 +2,10 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.2.2 (2015-03-27)
+-------------------
+* Update Solar 10’s omnibus-build-essential to 0.0.5
+
 v2.2.1 (2015-03-23)
 -------------------
 * Install GNU Patch on Solaris 11
