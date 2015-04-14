@@ -1,19 +1,31 @@
-language: ruby
+# Use Travis's cointainer based infrastructure
+sudo: false
+addons:
+  apt:
+    sources:
+      - chef-stable-precise
+    packages:
+      - chefdk
 
-rvm:
-  - 2.1.0
-
-bundler_args: --jobs 7 --without kitchen_vagrant --without development
+# Don't `bundle install`
+install: echo "skip bundle install"
 
 branches:
   only:
     - master
 
-before_install:
-  - export USE_SYSTEM_GECODE=1
-  - sudo apt-get -y install libgecode-dev
-
-script: bundle exec rake travis:ci
+# Ensure we make ChefDK's Ruby the default
+before_script:
+  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  # We have to install chef-sugar for ChefSpec
+  - /opt/chefdk/embedded/bin/chef gem install chef-sugar
+script:
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/rubocop --version
+  - /opt/chefdk/embedded/bin/rubocop
+  - /opt/chefdk/embedded/bin/foodcritic --version
+  - /opt/chefdk/embedded/bin/foodcritic . --exclude spec
+  - /opt/chefdk/embedded/bin/rspec spec
 
 notifications:
   hipchat:
