@@ -2,6 +2,11 @@ build-essential Cookbook CHANGELOG
 ==================================
 This file is used to list changes made in each version of the build-essential cookbook.
 
+v2.2.3 (2015-04-15)
+-------------------
+* Don’t install omnibus-build-essential on Solaris 10 - We decided it’s easier to use the old GCC that ships with Solaris 10.
+* Use ChefDK for all Travis testing.
+
 v2.2.2 (2015-03-27)
 -------------------
 * Update Solar 10’s omnibus-build-essential to 0.0.5
