@@ -4,6 +4,8 @@ AllCops:
     - script/**/*
     - vendor/**/*
 
+AbcSize:
+  Max: 50
 AlignParameters:
   Enabled: false
 ClassAndModuleChildren:
