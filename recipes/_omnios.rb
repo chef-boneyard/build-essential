@@ -18,7 +18,11 @@
 #
 
 potentially_at_compile_time do
-  package 'developer/gcc47'
+  if node['platform_version'].to_i < 151_008
+    package 'developer/gcc47'
+  else
+    package 'developer/gcc48'
+  end
   package 'developer/object-file'
   package 'developer/linker'
   package 'developer/library/lint'
