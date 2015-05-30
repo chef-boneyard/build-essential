@@ -72,20 +72,14 @@ module BuildEssential
     def check_for_old_attributes!
       unless node['build_essential'].nil?
         Chef::Log.warn <<-EOH
-node['build_essential'] has been changed to node['build-essential'] to match the
-cookbook name and community standards. I have gracefully converted the attribute
-for you, but this warning and conversion will be removed in the next major
-release of the build-essential cookbook.
+node['build_essential'] has been changed to node['build-essential'] to match the cookbook name and community standards. I have gracefully converted the attribute for you, but this warning and conversion will be removed in the next major release of the build-essential cookbook.
 EOH
         node.default['build-essential'] = node['build_essential']
       end
 
       unless node['build-essential']['compiletime'].nil?
         Chef::Log.warn <<-EOH
-node['build-essential']['compiletime'] has been deprecated. Please use
-node['build-essential']['compile_time'] instead. I have gracefully converted the
-attribute for you, but this warning and converstion will be removed in the next
-major release of the build-essential cookbook.
+node['build-essential']['compiletime'] has been deprecated. Please use node['build-essential']['compile_time'] instead. I have gracefully converted the attribute for you, but this warning and converstion will be removed in the next major release of the build-essential cookbook.
 EOH
         node.default['build-essential']['compile_time'] = node['build-essential']['compiletime']
       end
