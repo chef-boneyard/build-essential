@@ -17,6 +17,6 @@
 # limitations under the License.
 #
 
-potentially_at_compile_time do
+potentially_at_compile_time(node) do
   xcode_command_line_tools 'install'
 end

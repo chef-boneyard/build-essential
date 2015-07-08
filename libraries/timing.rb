@@ -42,8 +42,8 @@ module BuildEssential
     # @param [Proc] block
     #   the thing to eval
     #
-    def potentially_at_compile_time(&block)
-      if compile_time?
+    def potentially_at_compile_time(current_node, &block)
+      if compile_time?(current_node)
         CompileTime.new(self).evaluate(&block)
       else
         instance_eval(&block)
@@ -57,9 +57,9 @@ module BuildEssential
     #
     # @return [true, false]
     #
-    def compile_time?
-      check_for_old_attributes!
-      !!node['build-essential']['compile_time']
+    def compile_time?(current_node)
+      check_for_old_attributes!(current_node)
+      !!current_node['build-essential']['compile_time']
     end
 
     #
@@ -69,8 +69,8 @@ module BuildEssential
     #
     # @return [void]
     #
-    def check_for_old_attributes!
-      unless node['build_essential'].nil?
+    def check_for_old_attributes!(current_node)
+      unless current_node['build_essential'].nil?
         Chef::Log.warn <<-EOH
 node['build_essential'] has been changed to node['build-essential'] to match the
 cookbook name and community standards. I have gracefully converted the attribute
@@ -80,7 +80,7 @@ EOH
         node.default['build-essential'] = node['build_essential']
       end
 
-      unless node['build-essential']['compiletime'].nil?
+      unless current_node['build-essential']['compiletime'].nil?
         Chef::Log.warn <<-EOH
 node['build-essential']['compiletime'] has been deprecated. Please use
 node['build-essential']['compile_time'] instead. I have gracefully converted the

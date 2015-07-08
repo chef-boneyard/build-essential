@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-potentially_at_compile_time do
+potentially_at_compile_time(node) do
   package 'devel/gmake'
   package 'devel/autoconf'
   package 'devel/m4'
