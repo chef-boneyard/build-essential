@@ -16,6 +16,7 @@ describe 'build-essential::_rhel' do
     expect(chef_run).to install_package('make')
     expect(chef_run).to install_package('m4')
     expect(chef_run).to install_package('patch')
+    expect(chef_run).to install_package('automake')
   end
 
   context 'on rhel < 6' do

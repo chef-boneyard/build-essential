@@ -28,4 +28,5 @@ potentially_at_compile_time do
   package 'make'
   package 'm4'
   package 'ncurses-devel'
+  package 'automake'
 end

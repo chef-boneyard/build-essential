@@ -14,5 +14,6 @@ describe 'build-essential::_debian' do
     expect(chef_run).to install_package('flex')
     expect(chef_run).to install_package('gettext')
     expect(chef_run).to install_package('ncurses-dev')
+    expect(chef_run).to install_package('automake')
   end
 end
