@@ -1,7 +1,7 @@
 Description
 ===========
 [![Cookbook Version](http://img.shields.io/cookbook/v/build-essential.svg)][cookbook]
-[![Build Status](http://img.shields.io/travis/chef-cookbooks/build-essential.svg)][travis]
+[![Build Status](http://img.shields.io/travis/opscode-cookbooks/build-essential.svg)][travis]
 
 [cookbook]: https://community.chef.io/cookbooks/build-essential
 [travis]: http://travis-ci.org/chef-cookbooks/build-essential
