@@ -27,3 +27,6 @@ attribute 'build-essential/compile_time',
   description: 'Execute resources at compile time.',
   default: 'false',
   recipes: ['build-essential::default']
+
+source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
+issues_url 'https://github.com/chef-cookbooks/build-essential/issues' if respond_to?(:issues_url)
