@@ -1,6 +1,9 @@
 driver:
   name: vagrant
 
+provisioner:
+  name: chef_zero
+
 platforms:
   - name: centos-5.11
   - name: centos-6.7
