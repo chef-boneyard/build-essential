@@ -17,5 +17,6 @@ describe 'build-essential::_fedora' do
     expect(chef_run).to install_package('make')
     expect(chef_run).to install_package('m4')
     expect(chef_run).to install_package('ncurses-devel')
+    expect(chef_run).to install_package('automake')
   end
 end

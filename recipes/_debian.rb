@@ -25,4 +25,5 @@ potentially_at_compile_time do
   package 'flex'
   package 'gettext'
   package 'ncurses-dev'
+  package 'automake'
 end
