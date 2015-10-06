@@ -84,7 +84,7 @@ EOH
         Chef::Log.warn <<-EOH
 node['build-essential']['compiletime'] has been deprecated. Please use
 node['build-essential']['compile_time'] instead. I have gracefully converted the
-attribute for you, but this warning and converstion will be removed in the next
+attribute for you, but this warning and conversion will be removed in the next
 major release of the build-essential cookbook.
 EOH
         node.default['build-essential']['compile_time'] = node['build-essential']['compiletime']
