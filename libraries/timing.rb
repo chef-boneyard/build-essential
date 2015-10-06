@@ -107,7 +107,7 @@ EOH
       def method_missing(m, *args, &block)
         resource = @recipe.send(m, *args, &block)
         if resource.is_a?(Chef::Resource)
-          actions  = Array(resource.action)
+          actions = Array(resource.action)
           resource.action(:nothing)
 
           actions.each do |action|
