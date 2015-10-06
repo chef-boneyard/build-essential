@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+group :rake do
+  gem 'rake'
+  gem 'tomlrb'
+end
+
 group :lint do
   gem 'foodcritic', '~> 5.0'
   gem 'rubocop', '~> 0.34'
@@ -34,5 +39,4 @@ group :development do
   gem 'guard-foodcritic'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  gem 'rake'
 end
