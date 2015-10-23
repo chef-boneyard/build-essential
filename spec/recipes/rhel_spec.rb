@@ -20,7 +20,7 @@ describe 'build-essential::_rhel' do
 
   context 'on rhel < 6' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'redhat', version: '5.9')
+      ChefSpec::ServerRunner.new(platform: 'redhat', version: '5.9')
         .converge(described_recipe)
     end
 
