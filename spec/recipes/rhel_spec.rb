@@ -12,7 +12,7 @@ describe 'build-essential::_rhel' do
     expect(chef_run).to install_package('flex')
     expect(chef_run).to install_package('gcc')
     expect(chef_run).to install_package('gcc-c++')
-    expect(chef_run).to install_package('kernel-devel')
+    expect(chef_run).to install_package('kernel-devel').with(version: chef_run.node['kernel']['release'].sub(".#{chef_run.node['kernel']['machine']}", ''))
     expect(chef_run).to install_package('make')
     expect(chef_run).to install_package('m4')
     expect(chef_run).to install_package('patch')
