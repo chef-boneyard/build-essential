@@ -1,0 +1,10 @@
+# Offense count: 1
+Style/DoubleNegation:
+  Exclude:
+    - 'libraries/timing.rb'
+
+# Offense count: 1
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Exclude:
+    - 'libraries/timing.rb'
