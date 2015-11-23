@@ -26,8 +26,6 @@ potentially_at_compile_time do
   package 'kernel-default-devel'
   package 'make'
   package 'm4'
-  package 'patch'
-  package 'git'
   package 'gettext-tools'
   package 'libacl-devel'
   package 'libcap-devel'
