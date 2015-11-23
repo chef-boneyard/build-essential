@@ -28,5 +28,7 @@ potentially_at_compile_time do
   package 'make'
   package 'm4'
   package 'ncurses-devel'
-  package 'patch'
+  package 'libattr-devel'
+  package 'libcap-devel'
+  package 'rpmdevtools'
 end

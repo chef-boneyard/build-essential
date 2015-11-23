@@ -26,7 +26,10 @@ potentially_at_compile_time do
   package 'kernel-devel'
   package 'make'
   package 'm4'
-  package 'patch'
+  package 'libattr-devel'
+  package 'libcap-devel'
+  package 'rpmdevtools'
+  package 'gettext'
 
   # Ensure GCC 4 is available on older pre-6 EL
   if node['platform_version'].to_i < 6

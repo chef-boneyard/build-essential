@@ -25,4 +25,6 @@ potentially_at_compile_time do
   package 'flex'
   package 'gettext'
   package 'ncurses-dev'
+  package 'libacl1-dev'
+  package 'libcap-dev'
 end
