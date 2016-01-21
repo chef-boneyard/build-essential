@@ -29,10 +29,12 @@ class Chef
     def initialize(name, run_context = nil)
       super
 
-      @provider = case node['platform_version'].to_f
-                  when 10.7, 10.8
+      # => Break down SemVer
+      major, minor, _patch = node['platform_version'].split('.').map { |v| String(v) }
+      @provider = case [major, minor].join('.')
+                  when '10.7', '10.8'
                     Provider::XcodeCommandLineToolsFromDmg
-                  when 10.9, 10.10
+                  when '10.9', '10.10'
                     Provider::XcodeCommandLineToolsFromSoftwareUpdate
                   else
                     Chef::Log.warn <<-EOH
