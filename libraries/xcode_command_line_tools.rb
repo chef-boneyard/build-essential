@@ -34,7 +34,7 @@ class Chef
       @provider = case [major, minor].join('.')
                   when '10.7', '10.8'
                     Provider::XcodeCommandLineToolsFromDmg
-                  when '10.9', '10.10'
+                  when '10.9', '10.10', '10.11'
                     Provider::XcodeCommandLineToolsFromSoftwareUpdate
                   else
                     Chef::Log.warn <<-EOH
