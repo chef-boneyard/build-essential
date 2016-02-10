@@ -20,7 +20,14 @@ platforms:
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
+  - name: windows-2008r2-standard
+    driver:
+      box: chef/windows-server-2008r2-standard # private
 
 suites:
   - name: default
     run_list: build-essential::default
+    attributes:
+      7-zip:
+        home: 'C:\Program Files\7-zip'
+

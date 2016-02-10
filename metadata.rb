@@ -20,8 +20,11 @@ supports 'scientific'
 supports 'smartos'
 supports 'suse'
 supports 'ubuntu'
+supports 'windows'
 
 suggests 'pkgutil' # Solaris 2
+
+depends '7-zip'
 
 attribute 'build-essential/compile_time',
   display_name: 'Build Essential Compile Time Execution',

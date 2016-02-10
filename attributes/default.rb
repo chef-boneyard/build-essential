@@ -18,3 +18,4 @@
 #
 
 default['build-essential']['compile_time'] = false
+default['build-essential']['msys']['path'] = "C:/msys"
