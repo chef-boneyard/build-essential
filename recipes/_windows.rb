@@ -21,7 +21,7 @@ require 'ostruct'
 include_recipe '7-zip::default'
 
 def p(url, checksum)
-  OpenStruct.new(:url => url, :checksum => checksum)
+  OpenStruct.new(url: url, checksum: checksum)
 end
 
 [

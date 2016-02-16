@@ -3,8 +3,8 @@ require 'pathname'
 
 if RUBY_PLATFORM =~ /mingw/
   set :backend, :cmd
-  set :os, :family => 'windows'
-  ENV['PATH'] = "C:\\msys\\bin;C:\\msys\\mingw\\bin"
+  set :os, family: 'windows'
+  ENV['PATH'] = 'C:\\msys\\bin;C:\\msys\\mingw\\bin'
 else
   set :backend, :exec
 end
