@@ -1,6 +1,5 @@
 module BuildEssential
   module MsysHelper
-
     #
     # This function returns a struct representing an
     # msys package. It has two fields: url and checksum
