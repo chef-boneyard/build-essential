@@ -26,9 +26,10 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 ## Attributes
 
-Attribute      | Default | Description
--------------- | :-----: | ---------------------------------
-`compile_time` | `false` | Execute resources at compile time
+Attribute                                 | Default                      | Description
+----------------------------------------- | :--------------------------: | ---------------------------------
+`node['build-essential']['compile_time']` | `false`                      | Execute resources at compile time
+`node['build-essential']['msys']['path']` | `#{ENV['SYSTEMDRIVE']\\msys` | Destination for msys (Windows only)
 
 ## Usage
 Include the build-essential recipe in your run list:

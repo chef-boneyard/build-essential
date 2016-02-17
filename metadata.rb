@@ -4,7 +4,7 @@ maintainer_email  'cookbooks@chef.io'
 license           'Apache 2.0'
 description       'Installs C compiler / build tools'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version           '2.2.4'
+version           '2.3.0'
 recipe            'build-essential', 'Installs packages required for compiling C software from source.'
 
 supports 'amazon'
