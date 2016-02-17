@@ -1,6 +1,9 @@
 # build-essential Cookbook CHANGELOG
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v2.3.0 (2016-01-17)
+- Add mingw/msys based build tools for Windows
+
 ## v2.2.4 (2015-10-06)
 - Add patch package on Fedora systems
 - Add additional platforms to Kitchen CI
