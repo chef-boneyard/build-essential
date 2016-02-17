@@ -26,9 +26,11 @@ action :unpack do
     action :create
   end
 
-  if new_resource.mingw
-    directory mingw_dir do
-      action :create
+  directory "dir-#{mingw_dir}" do
+    action :create
+    path mingw_dir
+    only_if do
+      new_resource.mingw
     end
   end
 
