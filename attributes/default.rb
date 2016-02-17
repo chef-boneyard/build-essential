@@ -18,4 +18,4 @@
 #
 
 default['build-essential']['compile_time'] = false
-default['build-essential']['msys']['path'] = 'C:/msys'
+default['build-essential']['msys']['path'] = File.join(ENV['SYSTEMDRIVE'], 'msys')
