@@ -26,11 +26,5 @@ suggests 'pkgutil' # Solaris 2
 
 depends '7-zip'
 
-attribute 'build-essential/compile_time',
-  display_name: 'Build Essential Compile Time Execution',
-  description: 'Execute resources at compile time.',
-  default: 'false',
-  recipes: ['build-essential::default']
-
 source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/build-essential/issues' if respond_to?(:issues_url)
