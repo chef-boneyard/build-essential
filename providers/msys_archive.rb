@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: build-essential
-# Recipe:: _mingw
+# Provider:: msys_archive
 #
 # Copyright 2016, Chef Software, Inc.
 #
@@ -18,8 +18,6 @@
 #
 
 use_inline_resources
-
-provides :msys_archive
 
 action :unpack do
   directory msys_dir do

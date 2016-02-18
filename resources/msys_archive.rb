@@ -1,6 +1,5 @@
 actions :unpack
 default_action :unpack
-provides :msys_archive
 
 attribute :source, kind_of: String, name_attribute: true
 attribute :root_dir, kind_of: String, required: true
