@@ -1,7 +1,10 @@
 # build-essential Cookbook CHANGELOG
 This file is used to list changes made in each version of the build-essential cookbook.
 
-## v2.3.0 (2016-01-17)
+## v2.3.1 (2016-02-18)
+- Restore Chef 11 compatibility and add Travis / Test Kitchen testing for Chef 11
+
+## v2.3.0 (2016-02-17)
 - Add mingw/msys based build tools for Windows
 
 ## v2.2.4 (2015-10-06)
