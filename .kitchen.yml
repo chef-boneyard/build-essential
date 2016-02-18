@@ -36,3 +36,6 @@ platforms:
 suites:
   - name: default
     run_list: build-essential::default
+    attributes:
+      7-zip:
+        home: 'C:\Program Files\7-zip'
