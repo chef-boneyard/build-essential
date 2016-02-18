@@ -16,6 +16,7 @@ env:
   - INSTANCE=default-ubuntu-1404
   - INSTANCE=default-centos-6
   - INSTANCE=default-centos-7
+  - INSTANCE=default-ubuntu-1404-chef11
 
 # Don't `bundle install`
 install: echo "skip bundle install"
