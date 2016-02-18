@@ -85,7 +85,7 @@ include_recipe '7-zip::default'
     'c8b7771304fb5e9fc33d8fca9045402f2e1bca055bf0b28127f3c3e85a254f67')
 ].each do |package|
   potentially_at_compile_time do
-    msys_archive package.url do
+    build_essential_msys_archive package.url do
       checksum package.checksum
       root_dir node['build-essential']['msys']['path']
     end
@@ -103,7 +103,7 @@ end
     '17fd497318d1ac187a113e8665330d746ad9607a0406ab2374db0d8e6f4094d1')
 ].each do |package|
   potentially_at_compile_time do
-    msys_archive package.url do
+    build_essential_msys_archive package.url do
       root_dir node['build-essential']['msys']['path']
       checksum package.checksum
       mingw true
