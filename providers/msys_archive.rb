@@ -19,7 +19,7 @@
 
 use_inline_resources
 
-provides :msys_archive
+provides :msys_archive if Chef::Provider.respond_to?(:provides)
 
 action :unpack do
   directory msys_dir do
