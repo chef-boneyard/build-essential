@@ -27,6 +27,7 @@ potentially_at_compile_time do
   package 'make'
   package 'm4'
   package 'patch'
+  package 'gettext-devel'
 
   # Ensure GCC 4 is available on older pre-6 EL
   if node['platform_version'].to_i < 6

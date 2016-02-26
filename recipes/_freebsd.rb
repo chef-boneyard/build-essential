@@ -21,4 +21,5 @@ potentially_at_compile_time do
   package 'devel/gmake'
   package 'devel/autoconf'
   package 'devel/m4'
+  package 'devel/gettext'
 end
