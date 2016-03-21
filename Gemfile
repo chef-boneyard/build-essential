@@ -18,6 +18,7 @@ end
 group :kitchen_common do
   gem 'test-kitchen', '~> 1.5'
   gem 'winrm-transport'
+  gem 'winrm-fs'
 end
 
 group :kitchen_vagrant do

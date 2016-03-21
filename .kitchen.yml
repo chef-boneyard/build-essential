@@ -16,6 +16,13 @@ platforms:
     run_list: yum::dnf_yum_compat
   - name: fedora-23
     run_list: yum::dnf_yum_compat
+  - name: freebsd-9.3
+    run_list:
+      - freebsd::portsnap
+      - freebsd::pkgng
+  - name: freebsd-10.2
+    run_list:
+      - freebsd::portsnap
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
