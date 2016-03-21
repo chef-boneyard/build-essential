@@ -1,10 +1,13 @@
 # build-essential Cookbook
+
 [![Cookbook Version](http://img.shields.io/cookbook/v/build-essential.svg)][cookbook] [![Build Status](http://img.shields.io/travis/chef-cookbooks/build-essential.svg)][travis]
 
 Installs packages required for compiling C software from source. Use this cookbook if you wish to compile C programs, or install RubyGems with native extensions.
 
 ## Requirements
+
 ### Platforms
+
 - Debian/Ubuntu
 - RHEL/CentOS/Scientific/Amazon/Oracle
 - openSUSE
@@ -14,11 +17,12 @@ Installs packages required for compiling C software from source. Use this cookbo
 - FreeBSD
 
 ### Chef
+
 - Chef 11+
 
 ### Cookbooks
-- Suggests pkgutil for Solaris based platforms
 
+- None
 
 **Note for Debian platform family:** On Debian platform-family systems, it is recommended that `apt-get update` be run, to ensure that the package cache is updated. It's not in the scope of this cookbook to do that, as it can [create a duplicate resource](https://tickets.chef.io/browse/CHEF-3694). We recommend using the [apt](https://supermarket.chef.io/cookbooks/apt) cookbook to do this.
 
@@ -27,11 +31,12 @@ Installs packages required for compiling C software from source. Use this cookbo
 ## Attributes
 
 Attribute                                 | Default                      | Description
------------------------------------------ | :--------------------------: | ---------------------------------
+----------------------------------------- | :--------------------------: | -----------------------------------
 `node['build-essential']['compile_time']` | `false`                      | Execute resources at compile time
 `node['build-essential']['msys']['path']` | `#{ENV['SYSTEMDRIVE']\\msys` | Destination for msys (Windows only)
 
 ## Usage
+
 Include the build-essential recipe in your run list:
 
 ```sh
@@ -45,7 +50,9 @@ include_recipe 'build-essential::default'
 ```
 
 ### Gems with C extensions
+
 For RubyGems that include native C extensions you wish to use with Chef, you should do the following.
+
 - Set the `compile_time` attribute to true in your wrapper cookbook or role:
 
   ```ruby
@@ -83,6 +90,7 @@ For RubyGems that include native C extensions you wish to use with Chef, you sho
   ```
 
 ## License & Authors
+
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
 **Copyright:** 2009-2015, Chef Software, Inc.

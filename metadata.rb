@@ -22,8 +22,6 @@ supports 'suse'
 supports 'ubuntu'
 supports 'windows'
 
-suggests 'pkgutil' # Solaris 2
-
 depends '7-zip'
 
 source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
