@@ -29,8 +29,9 @@ potentially_at_compile_time do
   package 'gettext-devel'
 
   # Ensure kernel-devel is the same as the current kernel version
+  # Don't specify a version when on LXC to prevent Travis failures
   package 'kernel-devel' do
-    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '')
+    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '') unless node['virtualization']['systems']['lxc'] && node['virtualization']['systems']['lxc'] == 'guest'
   end
 
   # Ensure GCC 4 is available on older pre-6 EL
