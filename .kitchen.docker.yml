@@ -21,6 +21,10 @@ platforms:
     run_command: /usr/lib/systemd/systemd
     provision_command:
       - /bin/yum install -y initscripts net-tools wget
+- name: debian-7.9
+  run_list: apt::default
+- name: debian-8.2
+  run_list: apt::default
 - name: ubuntu-12.04
   driver:
     image: ubuntu-upstart:12.04
