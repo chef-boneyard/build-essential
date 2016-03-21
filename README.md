@@ -22,7 +22,7 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 ### Cookbooks
 
-- None
+- seven_zip
 
 **Note for Debian platform family:** On Debian platform-family systems, it is recommended that `apt-get update` be run, to ensure that the package cache is updated. It's not in the scope of this cookbook to do that, as it can [create a duplicate resource](https://tickets.chef.io/browse/CHEF-3694). We recommend using the [apt](https://supermarket.chef.io/cookbooks/apt) cookbook to do this.
 
