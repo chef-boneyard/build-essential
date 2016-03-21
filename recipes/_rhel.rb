@@ -23,11 +23,15 @@ potentially_at_compile_time do
   package 'flex'
   package 'gcc'
   package 'gcc-c++'
-  package 'kernel-devel'
   package 'make'
   package 'm4'
   package 'patch'
   package 'gettext-devel'
+
+  # Ensure kernel-devel is the same as the current kernel version
+  package 'kernel-devel' do
+    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '')
+  end
 
   # Ensure GCC 4 is available on older pre-6 EL
   if node['platform_version'].to_i < 6
