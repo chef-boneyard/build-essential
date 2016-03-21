@@ -14,6 +14,8 @@ env:
   matrix:
   - INSTANCE=default-ubuntu-1204
   - INSTANCE=default-ubuntu-1404
+  - INSTANCE=debian-7.9
+  - INSTANCE=debian-8.2
   - INSTANCE=default-centos-6
   - INSTANCE=default-centos-7
   - INSTANCE=default-ubuntu-1404-chef11
