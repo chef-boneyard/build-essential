@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+UNRELEASED
+
+- Install GCC 4.9 on FreeBSD < 10
+- Install the version of kernel-devel that matches the running Kernel on RHEL
+- Remove suggests 'pkgutil' from the metadata as suggests does nothing
+- Properly warn the user that build-essential does not support Solaris 10 instead of just silently continuing on
+
 ## v2.4.0 (2016-03-21)
 
 - Add gettext package to RHEL / FreeBSD to match other platforms
