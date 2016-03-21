@@ -28,7 +28,7 @@ when 5.10
   #   SUNWgtar
   #
 when 5.11
-  potentially_at_compile_time do
+  potentially_at_compile_time(node) do
     package 'autoconf'
     package 'automake'
     package 'bison'
