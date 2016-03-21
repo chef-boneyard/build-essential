@@ -19,14 +19,7 @@
 
 case node['platform_version'].to_f
 when 5.10
-  # You should install the following packages from the Solaris 10 DVD:
-  #
-  #   SUNWbison
-  #   SUNWgcc
-  #   SUNWggrp
-  #   SUNWgmake
-  #   SUNWgtar
-  #
+  Chef::Log.warn('build-essential does not support Solaris 10. You will need to install SUNWbison, SUNWgcc, SUNWggrp, SUNWgmake, and SUNWgtar from the Solaris DVD')
 when 5.11
   potentially_at_compile_time do
     package 'autoconf'
