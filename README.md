@@ -26,8 +26,6 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 **Note for Debian platform family:** On Debian platform-family systems, it is recommended that `apt-get update` be run, to ensure that the package cache is updated. It's not in the scope of this cookbook to do that, as it can [create a duplicate resource](https://tickets.chef.io/browse/CHEF-3694). We recommend using the [apt](https://supermarket.chef.io/cookbooks/apt) cookbook to do this.
 
-**Note for OmniOS**: Currently, OmniOS's Ruby package is built with GCC 4.6.3, and the path is hardcoded, as the gcc binaries are not installed in the default $PATH. This means that in order to install RubyGems into the "system" Ruby, one must install `developer/gcc46`. [An issue](https://github.com/omniti-labs/omnios-build/issues/19) is open upstream w/ OmniOS to rebuild the Ruby package with GCC 4.7.2.
-
 ## Attributes
 
 Attribute                                 | Default                      | Description
