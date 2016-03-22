@@ -29,8 +29,10 @@ potentially_at_compile_time do
   package 'gettext-devel'
 
   # Ensure kernel-devel is the same as the current kernel version
+  # Don't specify the version when on docker as this fails travis
   package 'kernel-devel' do
-    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '')
+    action :install
+    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '') unless node['virtualization']['systems']['docker'] && node['virtualization']['systems']['docker'] == 'guest'
   end
 
   # Ensure GCC 4 is available on older pre-6 EL
