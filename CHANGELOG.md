@@ -10,6 +10,8 @@ UNRELEASED
 - Properly warn the user that build-essential does not support Solaris 10 instead of just silently continuing on
 - Updated specs to run against more recent OS releases
 - Removed the warning for OmniOS users from the Readme as the upstream issue has been resolved
+- Switch from 7-zip to seven_zip cookbook as 7-zip has been deprecated
+- Add 7-zip to the system path on Windows hosts so the recipe will work out of the box
 
 ## v2.4.0 (2016-03-21)
 
