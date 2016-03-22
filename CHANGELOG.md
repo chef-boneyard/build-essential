@@ -8,6 +8,8 @@ UNRELEASED
 - Install the version of kernel-devel that matches the running Kernel on RHEL
 - Remove suggests 'pkgutil' from the metadata as suggests does nothing
 - Properly warn the user that build-essential does not support Solaris 10 instead of just silently continuing on
+- Updated specs to run against more recent OS releases
+- Removed the warning for OmniOS users from the Readme as the upstream issue has been resolved
 
 ## v2.4.0 (2016-03-21)
 
