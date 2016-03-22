@@ -22,7 +22,7 @@ describe 'build-essential::_rhel' do
   context 'on rhel < 6' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'centos', version: '5.11') do |node|
-        node.automatic[:virtualization][:systems] = {}
+        node.automatic[:virtualization] = {}
       end.converge(described_recipe)
     end
 
