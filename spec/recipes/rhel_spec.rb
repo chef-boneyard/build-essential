@@ -26,7 +26,6 @@ describe 'build-essential::_rhel' do
       end.converge(described_recipe)
     end
 
-
     it 'installs more packages' do
       expect(chef_run).to install_package('gcc44')
       expect(chef_run).to install_package('gcc44-c++')
