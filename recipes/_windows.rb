@@ -18,7 +18,7 @@
 #
 require 'ostruct'
 
-include_recipe '7-zip::default'
+include_recipe 'seven_zip::default'
 
 [
   msys_p('http://downloads.sourceforge.net/mingw/msysCORE-1.0.17-1-msys-1.0.17-bin.tar.lzma',
