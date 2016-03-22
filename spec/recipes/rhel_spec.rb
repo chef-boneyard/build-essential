@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe 'build-essential::_rhel' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'redhat', version: '6.5')
-                          .converge(described_recipe)
+    ChefSpec::ServerRunner.new(platform: 'centos', version: '6.7') do |node|
+      node.automatic[:virtualization][:systems] = {}
+    end.converge(described_recipe)
   end
 
   it 'installs the correct packages' do
@@ -12,7 +13,7 @@ describe 'build-essential::_rhel' do
     expect(chef_run).to install_package('flex')
     expect(chef_run).to install_package('gcc')
     expect(chef_run).to install_package('gcc-c++')
-    expect(chef_run).to install_package('kernel-devel').with(version: chef_run.node['kernel']['release'].sub(".#{chef_run.node['kernel']['machine']}", ''))
+    expect(chef_run).to install_package('kernel-devel').with(version: '2.6.32-573.el6')
     expect(chef_run).to install_package('make')
     expect(chef_run).to install_package('m4')
     expect(chef_run).to install_package('patch')
@@ -20,9 +21,11 @@ describe 'build-essential::_rhel' do
 
   context 'on rhel < 6' do
     let(:chef_run) do
-      ChefSpec::ServerRunner.new(platform: 'redhat', version: '5.9')
-                            .converge(described_recipe)
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '5.11') do |node|
+        node.automatic[:virtualization][:systems] = {}
+      end.converge(described_recipe)
     end
+
 
     it 'installs more packages' do
       expect(chef_run).to install_package('gcc44')
