@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
-UNRELEASED
+## v3.0.0 (2016-03-23)
 
 - Install GCC 4.9 on FreeBSD < 10
 - Install the version of kernel-devel that matches the running Kernel on RHEL
@@ -12,6 +12,7 @@ UNRELEASED
 - Removed the warning for OmniOS users from the Readme as the upstream issue has been resolved
 - Switch from 7-zip to seven_zip cookbook as 7-zip has been deprecated
 - Add 7-zip to the system path on Windows hosts so the recipe will work out of the box
+- Switch from the deprecated 7-zip cookbook to seven_zip
 
 ## v2.4.0 (2016-03-21)
 
