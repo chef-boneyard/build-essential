@@ -22,7 +22,7 @@ supports 'suse'
 supports 'ubuntu'
 supports 'windows'
 
-depends '7-zip'
+depends 'seven_zip'
 
 source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/build-essential/issues' if respond_to?(:issues_url)
