@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v3.1.0 (2016-03-23)
+
+- Install GCC 4.8 if running on OmniOS >= 151008
+
 ## v3.0.0 (2016-03-23)
 
 - Install GCC 4.9 on FreeBSD < 10
