@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v3.2.0 (2016-03-25)
+
+This version backs out a change in the 3.0 release which attempted to install the version of kernel-devel for the current running kernel on RHEL systems.  This change had several unintended consequences and we believe the best solution is to back to change out until a better solution for the original problem is developed.  Several of the issues could be resolved by code updates to build-essential, but not all, which complicates rolling forward vs. a roll back. The change caused issues which Chefspec runs on cookbooks where build-essential is a dependency as Fauxhai, used by Chefspec, does not mock out node['virtualization']. Fauxhai is being updated to mock out node['virtualization'], but we'd like to make sure a ChefDK release ships with this new Fauxhai before depending on that change.
+
 ## v3.1.0 (2016-03-23)
 
 - Install GCC 4.8 if running on OmniOS >= 151008
