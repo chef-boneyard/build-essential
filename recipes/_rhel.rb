@@ -23,17 +23,11 @@ potentially_at_compile_time do
   package 'flex'
   package 'gcc'
   package 'gcc-c++'
+  package 'kernel-devel'
   package 'make'
   package 'm4'
   package 'patch'
   package 'gettext-devel'
-
-  # Ensure kernel-devel is the same as the current kernel version
-  # Don't specify the version when on docker as this fails travis
-  package 'kernel-devel' do
-    action :install
-    version node['kernel']['release'].sub(".#{node['kernel']['machine']}", '') unless node['virtualization']['systems'] && node['virtualization']['systems']['docker'] && node['virtualization']['systems']['docker'] == 'guest'
-  end
 
   # Ensure GCC 4 is available on older pre-6 EL
   if node['platform_version'].to_i < 6
