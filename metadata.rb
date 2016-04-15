@@ -21,6 +21,7 @@ supports 'smartos'
 supports 'suse'
 supports 'ubuntu'
 supports 'windows'
+supports 'zlinux'
 
 depends 'seven_zip'
 
