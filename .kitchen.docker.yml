@@ -38,7 +38,7 @@ platforms:
     run_command: /sbin/init
     provision_command:
       - /usr/bin/apt-get update
-      - /usr/bin/apt-get install apt-transport-https net-tools -y
+      - /usr/bin/apt-get install apt-transport-https net-tools bsdutils -y
 - name: ubuntu-12.04
   driver:
     image: ubuntu-upstart:12.04
