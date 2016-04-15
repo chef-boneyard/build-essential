@@ -18,6 +18,7 @@
 #
 
 potentially_at_compile_time do
+  package 'bsdutils'
   package 'autoconf'
   package 'binutils-doc'
   package 'bison'
