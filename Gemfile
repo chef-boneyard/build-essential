@@ -24,5 +24,5 @@ group :kitchen_vagrant do
 end
 
 group :kitchen_dokken do
-  gem 'kitchen_dokken'
+  gem 'kitchen-dokken'
 end
