@@ -21,6 +21,7 @@ end
 
 group :kitchen_vagrant do
   gem 'kitchen-vagrant', '~> 0.20'
+  gem 'winrm-fs'
 end
 
 group :kitchen_dokken do

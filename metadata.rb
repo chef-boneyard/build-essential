@@ -24,6 +24,7 @@ supports 'windows'
 supports 'zlinux'
 
 depends 'seven_zip'
+depends 'mingw'
 
 source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
 issues_url 'https://github.com/chef-cookbooks/build-essential/issues' if respond_to?(:issues_url)
