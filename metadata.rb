@@ -23,6 +23,7 @@ supports 'ubuntu'
 supports 'windows'
 supports 'zlinux'
 
+depends 'now'
 depends 'seven_zip'
 
 source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)

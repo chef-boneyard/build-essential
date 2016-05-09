@@ -19,7 +19,7 @@
 require 'ostruct'
 
 node.default['seven_zip']['syspath'] = true
-include_recipe 'seven_zip::default'
+include_recipe_now 'seven_zip::default'
 
 [
   msys_p('http://downloads.sourceforge.net/mingw/msysCORE-1.0.17-1-msys-1.0.17-bin.tar.lzma',
