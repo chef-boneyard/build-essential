@@ -72,7 +72,7 @@ end
 potentially_at_compile_time do
   mingw_tdm_gcc 'TDM GCC 32-bit with SJLJ' do
     version '5.1.0'
-    flavor :sjlj_32
+    flavor :dw2_32
     root tool32_path
   end
 
