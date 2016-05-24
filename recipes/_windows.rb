@@ -70,7 +70,7 @@ tool64_path = node['build-essential']['mingw64']['path']
 end
 
 potentially_at_compile_time do
-  mingw_tdm_gcc 'TDM GCC 32-bit with SJLJ' do
+  mingw_tdm_gcc 'TDM GCC 32-bit with Dwarf2' do
     version '5.1.0'
     flavor :dw2_32
     root tool32_path
