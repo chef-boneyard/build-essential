@@ -57,7 +57,7 @@ action :install do
   when 'suse'
     package %w( autoconf bison flex gcc gcc-c++ kernel-default-devel make m4 )
   when 'windows'
-    include_recipe 'build_essential::_windows'
+    include_recipe 'build-essential::_windows'
   else
     Chef::Log.warn <<-EOH
   A build-essential recipe does not exist for '#{node['platform_family']}'. This
