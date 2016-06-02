@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-describe 'build-essential::_windows' do
+describe 'build-essential::default' do
   let(:path32) { 'C:\\mingw32' }
   let(:path64) { 'C:\\mingw64' }
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'windows', version: '2012R2') do |node|
+    ChefSpec::ServerRunner.new(platform: 'windows', version: '2012R2',
+                               step_into: ['build_essential']) do |node|
       node.set['build-essential']['mingw32']['path'] = path32
       node.set['build-essential']['mingw64']['path'] = path64
     end.converge(described_recipe)

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'build-essential::_mac_os_x' do
+describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'mac_os_x', version: '10.11.1')
-                          .converge(described_recipe)
+    ChefSpec::ServerRunner.new(platform: 'mac_os_x', version: '10.11.1',
+                               step_into: ['build_essential']).converge('build-essential::default')
   end
 
   it 'installs the xcode command line tools' do
