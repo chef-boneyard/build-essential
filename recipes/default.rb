@@ -19,4 +19,6 @@
 
 # Call the build-essential custom resource
 # This can also be called directly in your cookbooks anywhere you want
-build_essential 'install_packages'
+build_essential 'install_packages' do
+  compile_time node['build-essential']['compile_time']
+end

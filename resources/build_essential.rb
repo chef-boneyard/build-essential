@@ -1,7 +1,7 @@
 provides 'build-essential'
 provides 'build_essential'
 
-property :compile_time, [true, false], default: true
+property :compile_time, [true, false], default: false
 
 action :install do
   case node['platform_family']
