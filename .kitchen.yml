@@ -21,6 +21,9 @@ platforms:
   - name: freebsd-10.2
     run_list:
       - freebsd::portsnap
+  - name: omnios-r151014
+    driver:
+      box: omnios/r151014
   - name: opensuse-13.2
   - name: ubuntu-12.04
     run_list: apt::default
@@ -28,6 +31,9 @@ platforms:
     run_list: apt::default
   - name: ubuntu-16.04
     run_list: apt::default
+  - name: solaris-11
+    driver:
+      box: chef/solaris-11
   - name: windows-2008r2-standard
     driver:
       box: chef/windows-server-2008r2-standard # private
