@@ -1,5 +1,4 @@
-provides 'build-essential'
-provides 'build_essential'
+provides :build_essential
 
 property :compile_time, [true, false], default: false
 
