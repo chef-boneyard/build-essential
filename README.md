@@ -10,7 +10,7 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 - Debian/Ubuntu
 - RHEL/CentOS/Scientific/Amazon/Oracle
-- openSUSE
+- openSUSE / SUSE Enterprise Linux
 - SmartOS
 - Fedora
 - Mac OS X

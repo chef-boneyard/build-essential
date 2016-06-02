@@ -12,8 +12,6 @@ platforms:
     run_list: apt::default
   - name: debian-8.4
     run_list: apt::default
-  - name: fedora-22
-    run_list: yum::dnf_yum_compat
   - name: fedora-23
     run_list: yum::dnf_yum_compat
   - name: freebsd-9.3
@@ -23,16 +21,13 @@ platforms:
   - name: freebsd-10.2
     run_list:
       - freebsd::portsnap
+  - name: opensuse-13.2
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
-  - name: ubuntu-14.04-chef11
+  - name: ubuntu-16.04
     run_list: apt::default
-    driver:
-      box: opscode-ubuntu-14.04
-    provisioner:
-      require_chef_omnibus: 11.18.6
   - name: windows-2008r2-standard
     driver:
       box: chef/windows-server-2008r2-standard # private

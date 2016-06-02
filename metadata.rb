@@ -14,6 +14,8 @@ supports 'fedora'
 supports 'freebsd'
 supports 'mac_os_x', '>= 10.7.0'
 supports 'mac_os_x_server', '>= 10.7.0'
+supports 'opensuse'
+supports 'opensuseleap'
 supports 'oracle'
 supports 'redhat'
 supports 'scientific'
@@ -25,6 +27,7 @@ supports 'zlinux'
 
 depends 'seven_zip'
 depends 'mingw'
+depends 'compat_resource', '>= 12.9.0'
 
-source_url 'https://github.com/chef-cookbooks/build-essential' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/build-essential/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/build-essential'
+issues_url 'https://github.com/chef-cookbooks/build-essential/issues'
