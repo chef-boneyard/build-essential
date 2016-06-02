@@ -13,17 +13,12 @@ action :install do
     # Ensure GCC 4 is available on older pre-6 EL
     package %w( gcc44 gcc44-c++ ) if node['platform_version'].to_i < 6
   when 'freebsd'
-    package 'autoconf'
-    package 'bison'
-    package 'flex'
-    package 'gcc'
-    package 'gcc-c++'
-    package 'gettext'
-    package 'kernel-devel'
-    package 'make'
-    package 'm4'
-    package 'ncurses-devel'
-    package 'patch'
+    package 'devel/gmake'
+    package 'devel/autoconf'
+    package 'devel/m4'
+    package 'devel/gettext'
+    # Only install gcc on freebsd 9.x - 10 uses clang
+    package 'lang/gcc49' if node['platform_version'].to_i <= 9
   when 'mac_os_x'
     xcode_command_line_tools 'install'
   when 'omnios'
