@@ -32,8 +32,7 @@ Installs packages required for compiling C software from source. Use this cookbo
 Attribute                                    |             Default             | Description
 -------------------------------------------- | :-----------------------------: | --------------------------------------------------------------
 `node['build-essential']['compile_time']`    |             `false`             | Execute resources at compile time
-`node['build-essential']['mingw32']['path']` | `#{ENV['SYSTEMDRIVE']\\mingw32` | Destination for mingw 32-bit compiler toolchain (Windows only)
-`node['build-essential']['mingw64']['path']` | `#{ENV['SYSTEMDRIVE']\\mingw64` | Destination for mingw 64-bit compiler toolchain (Windows only)
+`node['build-essential']['msys2']['path']`   | `#{ENV['SYSTEMDRIVE']\\msys2`   | Destination for msys2 build tool chain (Windows only)
 
 ## Usage
 
