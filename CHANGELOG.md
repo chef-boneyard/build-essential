@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v6.0.0 (2016-06-03)
+
+This cookbook now uses the new msys2 based compiler toolchain on windows. Both 32-bit DW2 and 64-bit SEH based toolchains are available based on the gcc 5.3x series compiler. By default these are located in C:\msys2\mingw32 and C:\msys2\mingw64
+
 ## v5.0.0 (2016-06-03)
 
 The cookbook now ships with a 12.5+ style custom resource 'build_essential' which performs the same work that the existing default.rb recipe. The default.rb recipe has been converted to consume that resource to provide backwards compatibility for users that use build-essential::default in their run lists or cookbooks. In converting to this custom resource support for EOL omnios has been removed and warning messages for Solaris 10 users have been removed. See the readme for usage information on the new resource.
