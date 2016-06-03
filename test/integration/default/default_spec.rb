@@ -1,13 +1,4 @@
-require 'serverspec'
 require 'pathname'
-
-if RUBY_PLATFORM =~ /mingw/
-  set :backend, :cmd
-  set :os, family: 'windows'
-  ENV['PATH'] = 'C:\\mingw32\\bin;C:\\mingw32\\msys\\1.0\\bin'
-else
-  set :backend, :exec
-end
 
 # FreeBSD 10+ uses clang
 compilers = if (os[:family] == 'freebsd') && (os[:release].to_i == 10)

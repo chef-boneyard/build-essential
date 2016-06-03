@@ -11,6 +11,7 @@ provisioner:
 
 verifier:
   name: inspec
+  format: doc
 
 platforms:
 - name: debian-7
