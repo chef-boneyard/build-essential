@@ -1,4 +1,5 @@
 provides :build_essential
+resource_name :build_essential
 
 property :compile_time, [true, false], default: false
 
