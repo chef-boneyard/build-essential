@@ -2,7 +2,7 @@
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/build-essential.svg)][cookbook] [![Build Status](http://img.shields.io/travis/chef-cookbooks/build-essential.svg)][travis]
 
-Installs packages required for compiling C software from source. Use this cookbook if you wish to compile C programs, or install RubyGems with native extensions.
+Installs packages required for compiling C software from source. Use this cookbook if you wish to compile C programs, or install RubyGems with native extensions. Contains a resource, 'build_essential', as as well as a default recipe that simply calls that same resource.
 
 ## Requirements
 
@@ -29,13 +29,17 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 ## Attributes
 
-Attribute                                    | Default                         | Description
--------------------------------------------- | :-----------------------------: | -----------------------------------
-`node['build-essential']['compile_time']`    | `false`                         | Execute resources at compile time
+Attribute                                    |             Default             | Description
+-------------------------------------------- | :-----------------------------: | --------------------------------------------------------------
+`node['build-essential']['compile_time']`    |             `false`             | Execute resources at compile time
 `node['build-essential']['mingw32']['path']` | `#{ENV['SYSTEMDRIVE']\\mingw32` | Destination for mingw 32-bit compiler toolchain (Windows only)
 `node['build-essential']['mingw64']['path']` | `#{ENV['SYSTEMDRIVE']\\mingw64` | Destination for mingw 64-bit compiler toolchain (Windows only)
 
 ## Usage
+
+### Recipe Usage
+
+The recipe simply calls the build_essential resource, but it ideal for adding to roles or node run lists.
 
 Include the build-essential recipe in your run list:
 
@@ -88,6 +92,24 @@ For RubyGems that include native C extensions you wish to use with Chef, you sho
   ```ruby
    chef_gem 'gem-with-native-extension'
   ```
+
+### Resource Usage
+
+The cookbook includes a resource 'build_essential' that can be included in your cookbook to install the necessary build-essential packages
+
+Simple package installation during the client run:
+
+```ruby
+build_essential 'some name you choose'
+```
+
+Package installation during the compile phase:
+
+```ruby
+build_essential 'some name you choose' do
+  compile_time false
+end
+```
 
 ## License & Authors
 
