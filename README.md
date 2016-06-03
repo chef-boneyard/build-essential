@@ -1,6 +1,6 @@
 # build-essential Cookbook
 
-[![Cookbook Version](http://img.shields.io/cookbook/v/build-essential.svg)][cookbook] [![Build Status](http://img.shields.io/travis/chef-cookbooks/build-essential.svg)][travis]
+[![Cookbook Version](http://img.shields.io/cookbook/v/build-essential.svg)][cookbook] [![Build Status](https://travis-ci.org/chef-cookbooks/build-essential.svg?branch=master)](https://travis-ci.org/chef-cookbooks/build-essential)
 
 Installs packages required for compiling C software from source. Use this cookbook if you wish to compile C programs, or install RubyGems with native extensions. Contains a resource, 'build_essential', as as well as a default recipe that simply calls that same resource.
 
