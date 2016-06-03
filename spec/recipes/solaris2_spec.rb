@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'build-essential::_solaris2' do
+describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'solaris2', version: '5.11')
-                          .converge(described_recipe)
+    ChefSpec::ServerRunner.new(platform: 'solaris2', version: '5.11',
+                               step_into: ['build_essential']).converge('build-essential::default')
   end
 
   it 'installs the correct packages' do

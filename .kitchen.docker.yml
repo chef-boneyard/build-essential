@@ -10,8 +10,8 @@ provisioner:
   name: dokken
 
 verifier:
-  root_path: '/opt/verifier'
-  sudo: false
+  name: inspec
+  format: doc
 
 platforms:
 - name: debian-7
@@ -20,6 +20,7 @@ platforms:
     pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install lsb-release -y
 
 - name: debian-8
   driver:
@@ -27,31 +28,38 @@ platforms:
     pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install lsb-release -y
 
 - name: centos-5
   driver:
     image: centos:5
+    platform: rhel
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN yum install -y which initscripts
 
 - name: centos-6
   driver:
     image: centos:6
+    platform: rhel
+    pid_one_command: /sbin/init
     intermediate_instructions:
-      - RUN yum -y install tar which initscripts
+      - RUN yum -y install which initscripts
 
 - name: centos-7
   driver:
     image: centos:7
-    intermediate_instructions:
-      - RUN yum clean all
-      - RUN yum -y install net-tools lsof
+    platform: rhel
     pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN yum -y install lsof which
 
 - name: fedora-23
   driver:
     image: fedora:23
     pid_one_command: /usr/lib/systemd/systemd
     intermediate_instructions:
-      - RUN dnf -y install tar yum
+      - RUN dnf -y install yum which
 
 - name: ubuntu-12.04
   driver:
@@ -59,7 +67,6 @@ platforms:
     pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
 
 - name: ubuntu-14.04
   driver:
@@ -67,17 +74,6 @@ platforms:
     pid_one_command: /sbin/init
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
-
-- name: ubuntu-14.04-chef11
-  driver:
-    image: ubuntu-upstart:14.04
-    pid_one_command: /sbin/init
-    intermediate_instructions:
-      - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
-    provisioner:
-      - require_chef_omnibus: 11
 
 - name: ubuntu-16.04
   driver:
@@ -85,7 +81,6 @@ platforms:
     pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
-      - RUN /usr/bin/apt-get install apt-transport-https net-tools -y
 
 - name: opensuse-13.2
   driver:

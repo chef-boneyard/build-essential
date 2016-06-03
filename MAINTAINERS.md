@@ -10,7 +10,7 @@ Check out [How Cookbooks are Maintained](https://github.com/chef-cookbooks/commu
 for details on the process and how to become a maintainer or the project lead.
 
 # Project Maintainer
-* [Jennifer Davis](https://github.com/sigje)
+* [Tim Smith](https://github.com/tas50)
 
 # Maintainers
 * [Jennifer Davis](https://github.com/sigje)

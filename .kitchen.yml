@@ -4,6 +4,10 @@ driver:
 provisioner:
   name: chef_zero
 
+verifier:
+  name: inspec
+  format: doc
+
 platforms:
   - name: centos-5.11
   - name: centos-6.7
@@ -12,8 +16,6 @@ platforms:
     run_list: apt::default
   - name: debian-8.4
     run_list: apt::default
-  - name: fedora-22
-    run_list: yum::dnf_yum_compat
   - name: fedora-23
     run_list: yum::dnf_yum_compat
   - name: freebsd-9.3
@@ -23,16 +25,19 @@ platforms:
   - name: freebsd-10.2
     run_list:
       - freebsd::portsnap
+  - name: omnios-r151014
+    driver:
+      box: omnios/r151014
+  - name: opensuse-13.2
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
-  - name: ubuntu-14.04-chef11
+  - name: ubuntu-16.04
     run_list: apt::default
+  - name: solaris-11
     driver:
-      box: opscode-ubuntu-14.04
-    provisioner:
-      require_chef_omnibus: 11.18.6
+      box: chef/solaris-11
   - name: windows-2008r2-standard
     driver:
       box: chef/windows-server-2008r2-standard # private
@@ -43,3 +48,10 @@ platforms:
 suites:
   - name: default
     run_list: build-essential::default
+  - name: compile_time
+    run_list: build-essential::default
+    attributes:
+      apt:
+        compile_time_update: true
+      build-essential:
+        compile_time: true
