@@ -10,7 +10,7 @@ else
 end
 
 # FreeBSD 10+ uses clang
-compilers = if (os[:family] == 'freebsd') && (os[:release] == 10)
+compilers = if (os[:family] == 'freebsd') && (os[:release].to_i == 10)
               %w(cc c++)
             elsif os[:family] == 'windows'
               %w(gcc g++)
