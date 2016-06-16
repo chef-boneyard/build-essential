@@ -40,14 +40,9 @@ end
 # Certain build steps assume that a tar command is available on the
 # system path. The default tar present in msys2\usr\bin is an msys GNU tar
 # that expects forward slashes and consider ':' to be a remote tape separator
-# or something weird like that. We therefore drop bat file in msys2\bin that
+# or something weird like that. We therefore drop a bat file in msys2\bin that
 # redirect to the underlying executables without mucking around with
 # msys2's /usr/bin itself.
-{
-  'bsdtar.exe' => 'tar.bat',
-  'patch.exe' => 'patch.bat'
-}.each do |reference, link|
-  file "#{tool_path}\\bin\\#{link}" do
-    content "@%~dp0..\\usr\\bin\\#{reference} %*"
-  end
+file "#{tool_path}\\bin\\tar.bat" do
+  content "@%~dp0..\\usr\\bin\\bsdtar.exe %*"
 end
