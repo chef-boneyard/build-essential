@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v6.0.1 (2016-07-19)
+- Clarify that this cookbook actually required Chef 12.1 or later not 12.0 or later
+- Add chef_version metadata
+
 ## v6.0.0 (2016-06-03)
 
 This cookbook now uses the new msys2 based compiler toolchain on windows. Both 32-bit DW2 and 64-bit SEH based toolchains are available based on the gcc 5.3x series compiler. By default these are located in C:\msys2\mingw32 and C:\msys2\mingw64
