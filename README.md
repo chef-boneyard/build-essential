@@ -18,7 +18,7 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
