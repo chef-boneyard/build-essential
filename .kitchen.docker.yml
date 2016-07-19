@@ -54,9 +54,9 @@ platforms:
     intermediate_instructions:
       - RUN yum -y install lsof which
 
-- name: fedora-23
+- name: fedora-latest
   driver:
-    image: fedora:23
+    image: fedora:latest
     pid_one_command: /usr/lib/systemd/systemd
     intermediate_instructions:
       - RUN dnf -y install yum which
@@ -85,6 +85,11 @@ platforms:
 - name: opensuse-13.2
   driver:
     image: opensuse:13.2
+    pid_one_command: /bin/systemd
+
+- name: opensuse-42.1
+  driver:
+    image: opensuse:42.1
     pid_one_command: /bin/systemd
 
 suites:
