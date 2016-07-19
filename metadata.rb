@@ -31,3 +31,5 @@ depends 'compat_resource', '>= 12.10'
 
 source_url 'https://github.com/chef-cookbooks/build-essential'
 issues_url 'https://github.com/chef-cookbooks/build-essential/issues'
+
+chef_version '>= 12.1' if respond_to?(:chef_version)
