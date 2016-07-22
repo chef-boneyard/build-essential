@@ -49,6 +49,8 @@ platforms:
   driver:
     image: fedora:latest
     pid_one_command: /usr/lib/systemd/systemd
+    intermediate_instructions:
+      - RUN dnf -y install yum
 
 - name: ubuntu-12.04
   driver:
