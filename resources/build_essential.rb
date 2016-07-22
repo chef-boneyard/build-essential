@@ -54,19 +54,23 @@ action :install do
     # http://omnios.omniti.com/wiki.php/DevEnv
     ENV['PATH'] = "#{ENV['PATH']}:/opt/gcc-4.7.2/bin"
   when 'solaris2'
-    package 'autoconf'
-    package 'automake'
-    package 'bison'
-    package 'gnu-coreutils'
-    package 'flex'
-    package 'gcc'
-    package 'gcc-3'
-    package 'gnu-grep'
-    package 'gnu-make'
-    package 'gnu-patch'
-    package 'gnu-tar'
-    package 'pkg-config'
-    package 'ucb'
+    if node['platform_version'].to_f == 5.10
+      Chef::Log.warn('build-essential does not support Solaris 10. You will need to install SUNWbison, SUNWgcc, SUNWggrp, SUNWgmake, and SUNWgtar from the Solaris DVD')
+    elsif node['platform_version'].to_f == 5.11
+      package 'autoconf'
+      package 'automake'
+      package 'bison'
+      package 'gnu-coreutils'
+      package 'flex'
+      package 'gcc@4.8.2' # lock because we don't use 5 yet
+      package 'gcc-3'
+      package 'gnu-grep'
+      package 'gnu-make'
+      package 'gnu-patch'
+      package 'gnu-tar'
+      package 'pkg-config'
+      package 'ucb'
+    end
   when 'smartos'
     package 'autoconf'
     package 'binutils'
