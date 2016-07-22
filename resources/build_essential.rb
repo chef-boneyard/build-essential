@@ -62,7 +62,7 @@ action :install do
       package 'bison'
       package 'gnu-coreutils'
       package 'flex'
-      package 'gcc'
+      package 'gcc@4.8.2' # lock because we don't use 5 yet
       package 'gcc-3'
       package 'gnu-grep'
       package 'gnu-make'
