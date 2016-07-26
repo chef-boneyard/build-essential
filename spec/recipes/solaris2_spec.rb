@@ -12,7 +12,7 @@ describe 'build-essential::default' do
     expect(chef_run).to install_package('bison')
     expect(chef_run).to install_package('gnu-coreutils')
     expect(chef_run).to install_package('flex')
-    expect(chef_run).to install_package('gcc@4.8.2')
+    expect(chef_run).to install_package('gcc').with_version('4.8.2')
     expect(chef_run).to install_package('gcc-3')
     expect(chef_run).to install_package('gnu-grep')
     expect(chef_run).to install_package('gnu-make')
