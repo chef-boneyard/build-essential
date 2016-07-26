@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## v6.0.3 (2016-07-26)
+- Fix how gcc version specified for Solaris 11
+
 ## v6.0.2 (2016-07-22)
 - Properly warn on Solaris 10
 - Specify the verson of gcc to install on Solaris 11
