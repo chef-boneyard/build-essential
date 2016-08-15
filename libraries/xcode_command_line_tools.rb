@@ -154,7 +154,9 @@ class Chef
     # @return [void]
     #
     def install
-      execute %|installer -package "$(find '#{mount_path}' -name *.mpkg)" -target "/"|
+      # The "-allowUntrusted" flag has been added to the installer command to accommodate
+      # for now-expired certificates used to sign the downloaded command line tools.
+      execute %|installer -allowUntrusted -package "$(find '#{mount_path}' -name *.mpkg)" -target "/"|
     end
 
     #
