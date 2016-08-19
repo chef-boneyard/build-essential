@@ -46,6 +46,7 @@ platforms:
   - name: macosx-10.7
     driver:
       box: chef/macosx-10.7 # private box in Chef's Atlas account
+      provider: vmware_fusion
   - name: macosx-10.10
     driver:
       box: chef/macosx-10.10 # private box in Chef's Atlas account
