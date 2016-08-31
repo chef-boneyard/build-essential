@@ -5,7 +5,7 @@ describe 'build-essential::default' do
   let(:chef_run) do
     ChefSpec::ServerRunner.new(platform: 'windows', version: '2012R2',
                                step_into: ['build_essential']) do |node|
-      node.set['build-essential']['msys2']['path'] = path
+      node.normal['build-essential']['msys2']['path'] = path
     end.converge(described_recipe)
   end
 
