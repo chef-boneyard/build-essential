@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 6.0.5 (2016-09-07)
+- Testing updates
+- Require the latest compat_resource
+
 ## 6.0.4 (2016-08-19)
 
 - Install CLTools from dmg with -allowUntrusted on old OSX
