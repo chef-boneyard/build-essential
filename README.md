@@ -29,10 +29,10 @@ Installs packages required for compiling C software from source. Use this cookbo
 
 ## Attributes
 
-Attribute                                    |             Default             | Description
--------------------------------------------- | :-----------------------------: | --------------------------------------------------------------
-`node['build-essential']['compile_time']`    |             `false`             | Execute resources at compile time
-`node['build-essential']['msys2']['path']`   | `#{ENV['SYSTEMDRIVE']\\msys2`   | Destination for msys2 build tool chain (Windows only)
+Attribute                                  |            Default            | Description
+------------------------------------------ | :---------------------------: | -----------------------------------------------------
+`node['build-essential']['compile_time']`  |            `false`            | Execute resources at compile time
+`node['build-essential']['msys2']['path']` | `#{ENV['SYSTEMDRIVE']\\msys2` | Destination for msys2 build tool chain (Windows only)
 
 ## Usage
 
@@ -114,7 +114,7 @@ end
 
 **Author:** Cookbook Engineering Team ([cookbooks@chef.io](mailto:cookbooks@chef.io))
 
-**Copyright:** 2009-2015, Chef Software, Inc.
+**Copyright:** 2009-2016, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
