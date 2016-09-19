@@ -71,6 +71,7 @@ action :install do
       package 'gnu-make'
       package 'gnu-patch'
       package 'gnu-tar'
+      package 'make'
       package 'pkg-config'
       package 'ucb'
     end
