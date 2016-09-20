@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 6.0.6 (2016-09-19)
+- Remove chef 11 compatibility in the metadata
+- Solaris 11 needs both make and gnu make
+
 ## 6.0.5 (2016-09-07)
 - Testing updates
 - Require the latest compat_resource
