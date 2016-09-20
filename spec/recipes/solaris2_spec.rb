@@ -18,6 +18,7 @@ describe 'build-essential::default' do
     expect(chef_run).to install_package('gnu-make')
     expect(chef_run).to install_package('gnu-patch')
     expect(chef_run).to install_package('gnu-tar')
+    expect(chef_run).to install_package('make')
     expect(chef_run).to install_package('pkg-config')
     expect(chef_run).to install_package('ucb')
   end
