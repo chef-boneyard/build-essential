@@ -4,6 +4,6 @@ metadata
 
 group :integration do
   cookbook 'yum'
-  cookbook 'apt'
   cookbook 'freebsd'
+  cookbook 'test', path: 'test/cookbooks/test'
 end
