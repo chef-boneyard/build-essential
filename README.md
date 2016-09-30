@@ -13,7 +13,7 @@ Installs packages required for compiling C software from source. Use this cookbo
 - openSUSE / SUSE Enterprise Linux
 - SmartOS
 - Fedora
-- Mac OS X
+- Mac OS X 10.9+
 - FreeBSD
 
 ### Chef
