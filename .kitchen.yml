@@ -12,9 +12,7 @@ platforms:
   - name: centos-6.8
   - name: centos-7.2
   - name: debian-7.11
-    run_list: apt::default
   - name: debian-8.5
-    run_list: apt::default
   - name: fedora-24
     run_list: yum::dnf_yum_compat
   - name: freebsd-9.3
@@ -29,24 +27,17 @@ platforms:
       box: omnios/r151014
   - name: opensuse-13.2
   - name: ubuntu-12.04
-    run_list: apt::default
   - name: ubuntu-14.04
-    run_list: apt::default
   - name: ubuntu-16.04
-    run_list: apt::default
   - name: solaris-11
     driver:
       box: chef/solaris-11
   - name: windows-2008r2-standard
     driver:
-      box: chef/windows-server-2008r2-standard # private
+      box: chef/windows-server-2008r2-standard # private box in Chef's Atlas account
   - name: windows-2012r2
     driver_config:
       box: chef/windows-server-2012r2-standard
-  - name: macosx-10.7
-    driver:
-      box: chef/macosx-10.7 # private box in Chef's Atlas account
-      provider: vmware_fusion
   - name: macosx-10.10
     driver:
       box: chef/macosx-10.10 # private box in Chef's Atlas account
@@ -58,11 +49,9 @@ platforms:
 
 suites:
   - name: default
-    run_list: build-essential::default
+    run_list: test::default
   - name: compile_time
-    run_list: build-essential::default
+    run_list: test::default
     attributes:
-      apt:
-        compile_time_update: true
       build-essential:
         compile_time: true

@@ -85,4 +85,4 @@ platforms:
 
 suites:
   - name: default
-    run_list: build-essential::default
+    run_list: test::default
