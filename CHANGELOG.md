@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 7.0.2 (2016-11-07)
+- Fix softwareupdate issue from -v to --verbose
+
 ## 7.0.1 (2016-10-06)
 - Install gcc 4.8 on SUSE < 12
 
