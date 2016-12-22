@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 7.0.3 (2016-12-22)
+- Require the latest compat_resource
+- Cookstyle fixes
+
 ## 7.0.2 (2016-11-07)
 - Fix softwareupdate issue from -v to --verbose
 
