@@ -45,7 +45,7 @@ end
 # msys2's /usr/bin itself.
 {
   'bsdtar.exe' => 'tar.bat',
-  'patch.exe' => 'patch.bat'
+  'patch.exe' => 'patch.bat',
 }.each do |reference, link|
   file "#{tool_path}\\bin\\#{link}" do
     content "@%~dp0..\\usr\\bin\\#{reference} %*"
