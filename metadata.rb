@@ -28,7 +28,7 @@ supports 'zlinux'
 
 depends 'seven_zip'
 depends 'mingw', '>= 1.1'
-depends 'compat_resource', '>= 12.14'
+depends 'compat_resource', '>= 12.16.3'
 
 source_url 'https://github.com/chef-cookbooks/build-essential'
 issues_url 'https://github.com/chef-cookbooks/build-essential/issues'
