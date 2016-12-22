@@ -99,9 +99,8 @@ end
 
 # this resource forces itself to run at compile_time
 def after_created
-  if compile_time
-    Array(action).each do |action|
-      run_action(action)
-    end
+  return unless compile_time
+  Array(action).each do |action|
+    run_action(action)
   end
 end
