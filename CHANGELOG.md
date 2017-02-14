@@ -2,26 +2,36 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.0.0 (2017-02-14)
+
+- Require 12.5 or later and remove compat_resource cookbook dependency
+
 ## 7.0.3 (2016-12-22)
+
 - Require the latest compat_resource
 - Cookstyle fixes
 
 ## 7.0.2 (2016-11-07)
+
 - Fix softwareupdate issue from -v to --verbose
 
 ## 7.0.1 (2016-10-06)
+
 - Install gcc 4.8 on SUSE < 12
 
 ## 7.0.0 (2016-09-30)
+
 - Remove support for OS X < 10.9 and add support for OS X 10.12
 - Refactor the xcode installer resource as a custom resource that does not require updates for each new OS X update
 - Use a test recipe with apt_update to avoid needing apt
 
 ## 6.0.6 (2016-09-19)
+
 - Remove chef 11 compatibility in the metadata
 - Solaris 11 needs both make and gnu make
 
 ## 6.0.5 (2016-09-07)
+
 - Testing updates
 - Require the latest compat_resource
 
