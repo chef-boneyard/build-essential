@@ -44,7 +44,7 @@ action :install do
   end
 end
 
-action_class do
+action_class.class_eval do
   #
   # Determine if the XCode Command Line Tools are installed
   #
