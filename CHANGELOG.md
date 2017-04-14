@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.0.1 (2017-04-14)
+
+- Test with local delivery and not Rake
+- Ensure compatibility with Chef 12.5
+- Update apache2 license string
+- Ensure compatibility with Amazon Linux on Chef 13
+
 ## 8.0.0 (2017-02-14)
 
 - Require 12.5 or later and remove compat_resource cookbook dependency
