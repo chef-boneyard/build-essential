@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.0.3 (2017-05-30)
+
+- Fix solaris metadata in metadata.rb
+- Remove mac_os_x_server from metata as it's not a platform
+
 ## 8.0.2 (2017-05-06)
 
 - Remove buggy action_class.class_eval usage
