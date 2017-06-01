@@ -16,9 +16,6 @@ platforms:
   - name: fedora-25
   - name: freebsd-10.3
   - name: freebsd-11
-  - name: omnios-r151020
-    driver:
-      box: omnios/r151020
   - name: opensuse-leap-42.2
   - name: ubuntu-14.04
   - name: ubuntu-16.04
@@ -35,6 +32,9 @@ platforms:
     driver:
       box: chef/macosx-10.11 # private box in Chef's Atlas account
       provider: vmware_fusion
+  - name: amazon-linux
+    driver_config:
+      box: mvbcoding/awslinux
 
 suites:
   - name: default
