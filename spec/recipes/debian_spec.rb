@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'debian', version: '8.4',
+    ChefSpec::ServerRunner.new(platform: 'debian', version: '8.7',
                                step_into: ['build_essential']).converge('build-essential::default')
   end
 

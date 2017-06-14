@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'smartos', version: 'joyent_20130111T180733Z',
+    ChefSpec::ServerRunner.new(platform: 'smartos', version: '5.11',
                                step_into: ['build_essential']).converge('build-essential::default')
   end
 

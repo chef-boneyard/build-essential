@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'opensuse', version: '13.2',
+    ChefSpec::ServerRunner.new(platform: 'opensuse', version: '42.1',
                                step_into: ['build_essential']).converge('build-essential::default')
   end
 
