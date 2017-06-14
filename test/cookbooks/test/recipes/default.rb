@@ -1,3 +1,3 @@
-apt_update 'update' if platform_family?('debian')
+apt_update 'update'
 
 include_recipe 'build-essential::default'
