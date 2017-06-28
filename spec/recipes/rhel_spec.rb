@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'build-essential::default' do
   let(:chef_run) do
-    ChefSpec::ServerRunner.new(platform: 'centos', version: '6.7',
+    ChefSpec::ServerRunner.new(platform: 'centos', version: '6.8',
                                step_into: ['build_essential']).converge(described_recipe)
   end
 
