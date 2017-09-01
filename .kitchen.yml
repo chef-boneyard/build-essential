@@ -9,10 +9,14 @@ verifier:
   name: inspec
 
 platforms:
+  - name: amazonlinux
+    driver_config:
+      box: mvbcoding/awslinux
   - name: centos-6
   - name: centos-7
   - name: debian-7
   - name: debian-8
+  - name: debian-9
   - name: fedora-26
   - name: freebsd-10
   - name: freebsd-11
@@ -32,9 +36,6 @@ platforms:
     driver:
       box: chef/macosx-10.11 # private box in Chef's Atlas account
       provider: vmware_fusion
-  - name: amazonlinux
-    driver_config:
-      box: mvbcoding/awslinux
 
 suites:
   - name: default
