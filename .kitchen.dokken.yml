@@ -18,6 +18,8 @@ platforms:
   driver:
     image: dokken/amazonlinux
     pid_one_command: /sbin/init
+    dns:
+      - 8.8.8.8
 
 - name: debian-7
   driver:
