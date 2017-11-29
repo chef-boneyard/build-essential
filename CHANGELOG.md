@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.0.4 (2017-11-29)
+
+- Install gcc-c and gcc-c++ for solaris 11
+- Fix dokken's amazonlinux configuration
+- Update chef dependency in metadata.rb to Chef 12.7
+- Clean up testing
+
 ## 8.0.3 (2017-05-30)
 
 - Fix solaris metadata in metadata.rb
