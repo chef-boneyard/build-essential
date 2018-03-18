@@ -20,15 +20,16 @@ services: docker
 env:
   matrix:
   - INSTANCE=default-amazonlinux
+  - INSTANCE=default-amazonlinux-2
   - INSTANCE=default-centos-6
   - INSTANCE=default-centos-7
-  - INSTANCE=default-debian-7
   - INSTANCE=default-debian-8
   - INSTANCE=default-debian-9
   - INSTANCE=default-fedora-latest
   - INSTANCE=default-opensuse-leap
   - INSTANCE=default-ubuntu-1404
   - INSTANCE=default-ubuntu-1604
+  - INSTANCE=default-ubuntu-1804
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
