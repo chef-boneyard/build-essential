@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.1.1 (2018-03-17)
+
+- Make sure we install the last available xcode command line tool package so we get the latest version
+
 ## 8.1.0 (2018-03-17)
 
 - Support Amazon Linux 2.0
