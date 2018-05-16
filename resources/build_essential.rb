@@ -36,8 +36,6 @@ action :install do
     package 'devel/autoconf'
     package 'devel/m4'
     package 'devel/gettext'
-    # Only install gcc on freebsd 9.x - 10 uses clang
-    package 'lang/gcc49' if node['platform_version'].to_i <= 9
   when 'mac_os_x'
     xcode_command_line_tools 'install'
   when 'omnios'
