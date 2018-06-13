@@ -64,7 +64,7 @@ action :install do
       %w(gcc gcc-c gcc-c++).each do |pkg|
         package pkg do # ~FC009
           accept_license true
-          version '4.8.2'
+          version '5.4.0'
         end
       end
       package 'gnu-grep'
