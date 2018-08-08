@@ -25,6 +25,7 @@ supports 'ubuntu'
 supports 'windows'
 supports 'zlinux'
 
+depends 'now'
 depends 'seven_zip'
 depends 'mingw', '>= 1.1'
 

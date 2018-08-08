@@ -18,7 +18,7 @@
 #
 
 node.default['seven_zip']['syspath'] = true
-include_recipe 'seven_zip::default'
+include_recipe_now 'seven_zip::default'
 
 tool_path = node['build-essential']['msys2']['path']
 
