@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.2.0 (2018-08-28)
+
+- Simplify the if installed logic for macos
+- Remove support for FreeBSD < 10 which is VERY much EOL
+- Avoid ChefSpec deprecation warnings
+- Avoid deprecation warnings in Chef 14.3+ by not loading resources already in Chef
+
 ## 8.1.1 (2018-03-17)
 
 - Make sure we install the last available xcode command line tool package so we get the latest version
