@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of the build-essential cookbook.
 
+## 8.2.1 (2018-09-04)
+
+- Add a note that this cookbook is no longer maintained as the build_essential resource was moved directly into the chef-client making this cookbook no longer necessary.
+
 ## 8.2.0 (2018-08-28)
 
 - Simplify the if installed logic for macos
