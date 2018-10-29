@@ -21,5 +21,16 @@ describe 'build-essential::default' do
         expect(chef_run).to install_package(['gcc48', 'gcc48-c++'])
       end
     end
+
+    context 'on suse >= 15' do
+      let(:chef_run) do
+        ChefSpec::ServerRunner.new(platform: 'suse', version: '15.0',
+                                   step_into: ['build_essential']).converge(described_recipe)
+      end
+
+      it 'installs insserv-compat' do
+        expect(chef_run).to install_package(['insserv-compat'])
+      end
+    end
   end
 end
